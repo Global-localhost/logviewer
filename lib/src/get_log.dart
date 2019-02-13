@@ -38,9 +38,9 @@ Future<String> getLog(String builder, String build, String test) async {
         .map(jsonDecode)
         .toList();
     return logs
-        .where((log) => log["name"] == test)
+        .where((log) => log["name"].startsWith(test))
         .map((log) => log["log"])
-        .first;
+        .join("\n========================================================\n");
   } catch (e) {
     return null;
   }
