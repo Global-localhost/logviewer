@@ -39,6 +39,7 @@ void logServer(HttpRequest request) async {
     if (build != 'latest') {
       expires = expires.add(Duration(days: 30));
     }
+    response.headers.expires = expires;    
     response.write(log);
     response.close();
   } catch (e, t) {
