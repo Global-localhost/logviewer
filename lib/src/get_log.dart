@@ -24,7 +24,8 @@ Future<String> getCloudFile(String bucket, String path) async {
   }
 }
 
-Future<String> getLog(String builder, String build, String test) async {
+Future<String> getLog(
+    String builder, String build, String configuration, String test) async {
   try {
     final bucket = "dart-test-results";
     if (build == "latest") {
@@ -37,10 +38,22 @@ Future<String> getLog(String builder, String build, String test) async {
         .where((line) => line != "")
         .map(jsonDecode)
         .toList();
-    return logs
-        .where((log) => log["name"] == test)
+    var testFilter = (log) => log["name"] == test;
+    if (test.endsWith("*")) {
+      final prefix = test.substring(0, test.length - 1);
+      testFilter = (log) => log["name"].startsWith(prefix);
+    }
+    var configurationFilter = (log) => log["configuration"] == configuration;
+    if (configuration.endsWith("*")) {
+      final prefix = configuration.substring(0, configuration.length - 1);
+      configurationFilter = (log) => log["configuration"].startsWith(prefix);
+    }
+    var result = logs
+        .where((log) => testFilter(log) && configurationFilter(log))
         .map((log) => log["log"])
-        .first;
+        .join("\n\n======================================================\n\n");
+    if (result.isEmpty) return null;
+    return result;
   } catch (e) {
     return null;
   }

@@ -25,16 +25,20 @@ void logServer(HttpRequest request) async {
     }
     final parts = request.uri.pathSegments;
     final builder = parts[1];
-    final build = parts[2];
-    final test = parts.skip(3).join('/');
-    final log = await getLog(builder, build, test);
+    final configuration = parts[2];
+    final build = parts[3];
+    final test = parts.skip(4).join('/');
+    final log = await getLog(builder, build, configuration, test);
     if (log == null) {
       noLog(request, builder, build, test);
       return;
     }
     final response = request.response;
     response.headers.contentType = ContentType.text;
-    response.headers.expires = DateTime.now().add(Duration(days: 30));
+    var expires = DateTime.now();
+    if (build != 'latest') {
+      expires = expires.add(Duration(days: 30));
+    }
     response.write(log);
     response.close();
   } catch (e, t) {

@@ -4,7 +4,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 /// Displays the log for a failing test on a given runner and build
-    
+
 import 'dart:async';
 import 'dart:io';
 
@@ -13,22 +13,24 @@ import 'package:args/args.dart';
 
 void main(List<String> args) {
   final parser = new ArgParser();
-  parser.addOption("builder",
-      abbr: "b",
-      help: "Fetch log from this builder");
+  parser.addOption("builder", abbr: "b", help: "Fetch log from this builder");
   parser.addOption("build-number",
       abbr: "n",
       defaultsTo: "latest",
       help: "Fetch log from this build on the chosen builder");
   parser.addOption("test",
-      abbr: "t",
-      help: "Fetch log for this test on the chosen builder");
+      abbr: "t", help: "Fetch log for this test on the chosen builder");
+  parser.addOption("configuration",
+      abbr: "c",
+      defaultsTo: "*",
+      help: "Limit logs to this configuration on the chosen builder");
   parser.addFlag("help", help: "Show the program usage.", negatable: false);
 
   final options = parser.parse(args);
   final builder = options["builder"];
   final test = options["test"];
   final build = options["build-number"];
+  final configuration = options["configuration"];
 
-  getLog(builder, build, test).then((log) => print(log));
+  getLog(builder, build, configuration, test).then((log) => print(log));
 }
