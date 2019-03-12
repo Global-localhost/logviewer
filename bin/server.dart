@@ -9,16 +9,33 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:log/src/get_log.dart';
+import 'package:log/src/group_changes.dart';
 import 'package:http/http.dart' as http;
 
+String changesPage;
+
 void main() async {
-  final server = await HttpServer.bind(InternetAddress.anyIPv4, 8080);
+  changesPage = await createChangesPage();
+  final server = await HttpServer.bind(InternetAddress.anyIPv4, 8084);
   server.listen(logServer);
   print("Server started at ip:port ${server.address}:${server.port}");
 }
 
 void logServer(HttpRequest request) async {
   try {
+    if (request.uri.path.startsWith('/changes')) {
+    final response = request.response;
+    response.headers.contentType = ContentType.html;
+    response.write(changesPage);
+    response.close();
+    return;
+  }
+
+
+
+
+
+  
     if (!request.uri.path.startsWith('/log/')) {
       notFound(request);
       return;

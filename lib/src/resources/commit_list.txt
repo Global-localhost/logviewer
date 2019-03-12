@@ -1,0 +1,800 @@
+commit 210361ae635d9c8957cb95955932a7080bcccf1d
+210361ae635d9c8957cb95955932a7080bcccf1d 2019-03-11 13:20:14 +0000 brianwilkerson@google.com Move IgnoreInfo out of the task model code base
+commit 440b4cd84e69d8b67a023ac9df605975b46a7276
+440b4cd84e69d8b67a023ac9df605975b46a7276 2019-03-11 13:08:34 +0000 johnniwinther@google.com Insert implicit casts when setting interface targets
+commit 567d552de8ff93d704111467e7f3bf3b896ab684
+567d552de8ff93d704111467e7f3bf3b896ab684 2019-03-11 12:52:03 +0000 athom@google.com [infra] Add versionchecker and debianpackage to test matrix
+commit 576c4c71d9547d7edd83428fa7c9e70c06c73f41
+576c4c71d9547d7edd83428fa7c9e70c06c73f41 2019-03-11 08:37:10 +0000 askesc@google.com [CFE] Always clone subexpressions of unevaluated constants.
+commit 674fd0e060a33deeedbc2f8fae7c32c7e3f0d8d5
+674fd0e060a33deeedbc2f8fae7c32c7e3f0d8d5 2019-03-10 20:02:52 +0000 shyndman@google.com Fixes VSCode highlighting of num.dart.
+commit fa90c9abe5cf53a3c62ff899a437038e696ecf74
+fa90c9abe5cf53a3c62ff899a437038e696ecf74 2019-03-10 17:06:28 +0000 scheglov@google.com New summaries work snapshot.
+commit ed9e70c77159bda15b643be81dfc5c8d5c451f08
+ed9e70c77159bda15b643be81dfc5c8d5c451f08 2019-03-09 17:37:16 +0000 brianwilkerson@google.com Add completion support for the ui-as-code features
+commit 133529675013342cfe7ff8c3daa656de16266c4b
+133529675013342cfe7ff8c3daa656de16266c4b 2019-03-09 17:24:06 +0000 scheglov@google.com Move SourceLibraryBuilder builder, support for typedef(s), some type parameters.
+commit 9ff0a654ca1bb7fd45eeeaf319ab28fc0cccf623
+9ff0a654ca1bb7fd45eeeaf319ab28fc0cccf623 2019-03-09 14:15:39 +0000 vegorov@google.com Revert "Reland "[VM runtime] Dual mapping of executable pages.""
+commit 9e5cf6b09e20a5a88aaba06f6547024b4eceb05c
+9e5cf6b09e20a5a88aaba06f6547024b4eceb05c 2019-03-09 13:43:26 +0000 paulberry@google.com Improve set/map/list literal type checking.
+commit affcca729b70793811f0a4bc4f32ac52d78a019c
+affcca729b70793811f0a4bc4f32ac52d78a019c 2019-03-09 00:13:06 +0000 paulberry@google.com Fix some tests broken by CL 94993
+commit f6c8468a985dd79cc00184d90d9882a5f06f8d5f
+f6c8468a985dd79cc00184d90d9882a5f06f8d5f 2019-03-09 00:07:36 +0000 paulberry@google.com Revert "Eliminate uses of old AST node types from pkg/analyzer/lib/src/summary"
+commit 303b8bab3abaccedd89be44e9a88e532d1820271
+303b8bab3abaccedd89be44e9a88e532d1820271 2019-03-09 00:02:46 +0000 pquitslund@google.com fix for null_closures
+commit 231c5c138e575de171f59b177efa32189bdaba78
+231c5c138e575de171f59b177efa32189bdaba78 2019-03-08 23:46:55 +0000 johnniwinther@google.com Create codegen work item for all members
+commit 0b40a46ab5d8286bc608e60062d2e449b79f628e
+0b40a46ab5d8286bc608e60062d2e449b79f628e 2019-03-08 23:22:45 +0000 paulberry@google.com Eliminate uses of old AST node types from pkg/analyzer/lib/src/summary
+commit 37fa71dc4e046b422a99ac81814aa93569ed6314
+37fa71dc4e046b422a99ac81814aa93569ed6314 2019-03-08 22:55:59 +0000 scheglov@google.com Resolve types in scopes, resynthesize some elements.
+commit 9f7e11c06b16c93c63bbfabcfe145b3250c1fe0d
+9f7e11c06b16c93c63bbfabcfe145b3250c1fe0d 2019-03-08 22:11:34 +0000 paulberry@google.com Remove extraneous `3` from method name
+commit d4ccff7b54e4073084403d77d31727add59b217f
+d4ccff7b54e4073084403d77d31727add59b217f 2019-03-08 21:36:21 +0000 paulberry@google.com Fix _inferSetOrMapLiteralType to handle a context of `?` correctly.
+commit 1e1d19bb025aa7a237d3903db96531fd95524ec2
+1e1d19bb025aa7a237d3903db96531fd95524ec2 2019-03-08 21:35:35 +0000 pquitslund@google.com fix for replace_colon_with_equals
+commit 04befc2ab3b1bddcddf503c7a7bc7781dc5a638e
+04befc2ab3b1bddcddf503c7a7bc7781dc5a638e 2019-03-08 21:17:35 +0000 brianwilkerson@google.com Improve type inference tests
+commit 73be247e123bd9514a1d573701da5670707e6c2a
+73be247e123bd9514a1d573701da5670707e6c2a 2019-03-08 21:04:20 +0000 paulberry@google.com Eliminate uses of old AST node types from pkg/analyzer/lib/src/generated
+commit 068aa0d2e732f4fb6be72105cc727c82c448a55c
+068aa0d2e732f4fb6be72105cc727c82c448a55c 2019-03-08 20:48:35 +0000 johnniwinther@google.com Support eagerly initialized static fields.
+commit e6f56a8adff72d03aebac173a743f9b37b799336
+e6f56a8adff72d03aebac173a743f9b37b799336 2019-03-08 20:48:31 +0000 ajcbik@google.com [vm/compiler] first vm implementation of block expression
+commit 474e7dc865a7b7d65a2e18d0fcae3e13377e8a74
+474e7dc865a7b7d65a2e18d0fcae3e13377e8a74 2019-03-08 20:31:15 +0000 pquitslund@google.com update add await fix description
+commit b3b9375ca702625e76d54a9565771f9a182a0deb
+b3b9375ca702625e76d54a9565771f9a182a0deb 2019-03-08 20:28:45 +0000 paulberry@google.com Update comments to refer to the greatest/least closure operation.
+commit 6387b1bc73f88e053b359abb7dadb9caafa850db
+6387b1bc73f88e053b359abb7dadb9caafa850db 2019-03-08 20:27:14 +0000 paulberry@google.com Clarify ambiguity handling logic in _inferSetOrMapLiteralType
+commit b72ab0790d89c748ba401b2e7a861239ef894ed1
+b72ab0790d89c748ba401b2e7a861239ef894ed1 2019-03-08 20:13:38 +0000 paulberry@google.com Add an Iterable type to the nonstandard SDK test.
+commit 1ce3e8af713ce9e97668d76c5f34d25eef3f93f8
+1ce3e8af713ce9e97668d76c5f34d25eef3f93f8 2019-03-08 19:05:19 +0000 dmitryas@google.com Reland "[cfe] Handle spread map entries of static type Null"
+commit 9f6476392c22bf4952152b1121431ee4fdaa3306
+9f6476392c22bf4952152b1121431ee4fdaa3306 2019-03-08 19:04:43 +0000 dmitryas@google.com Reland "[cfe] Compile null-aware spreads in non-const maps"
+commit 10b38fd3f91c1221e4c1457721428bdab9dc361b
+10b38fd3f91c1221e4c1457721428bdab9dc361b 2019-03-08 19:04:03 +0000 dmitryas@google.com Reland "[cfe] Handle spread elements of static type Null"
+commit c31be8ab5cdfd079aaa7cb25232a13cb88eb0d6d
+c31be8ab5cdfd079aaa7cb25232a13cb88eb0d6d 2019-03-08 19:03:27 +0000 dmitryas@google.com Reland "[cfe] Disambiguate between sets and maps with spreads"
+commit 8430281a6b2c0dd4b9fb9c87e23171dae7910db0
+8430281a6b2c0dd4b9fb9c87e23171dae7910db0 2019-03-08 18:58:58 +0000 paulberry@google.com Add an implementation of ScopedVisitor.visitForEachPartsWithDeclaration.
+commit 6da340bf76f104b982dc90c2f6642cceb4cdcafd
+6da340bf76f104b982dc90c2f6642cceb4cdcafd 2019-03-08 18:33:02 +0000 regis@google.com Reland "[VM runtime] Dual mapping of executable pages."
+commit 2b501b21aab957be80821cabfebf57722b7627e2
+2b501b21aab957be80821cabfebf57722b7627e2 2019-03-08 17:39:34 +0000 regis@google.com Revert "[cfe] Disambiguate between sets and maps with spreads"
+commit ff5f5de1bea397349122dbb62cc7cdb409fb87db
+ff5f5de1bea397349122dbb62cc7cdb409fb87db 2019-03-08 17:35:43 +0000 regis@google.com Revert "[cfe] Handle spread elements of static type Null"
+commit b2cb604b9d581a44cdc4f83c709d49faf7e31b12
+b2cb604b9d581a44cdc4f83c709d49faf7e31b12 2019-03-08 17:31:33 +0000 danrubel@google.com improve literal list/map/set control flow recovery
+commit d2d098405ff8860b9163f52d0fab6df442311d1d
+d2d098405ff8860b9163f52d0fab6df442311d1d 2019-03-08 17:27:38 +0000 nshahan@google.com [tests] Fix some control flow collections tests
+commit 1a2c93ae00f3f766ae6e7dd5694f5d7e5b05f3a7
+1a2c93ae00f3f766ae6e7dd5694f5d7e5b05f3a7 2019-03-08 17:19:36 +0000 regis@google.com Revert "[cfe] Compile null-aware spreads in non-const maps"
+commit afccd8cbc7ec81ed12937af7a13fdfdaf0162056
+afccd8cbc7ec81ed12937af7a13fdfdaf0162056 2019-03-08 17:19:35 +0000 regis@google.com Revert "[cfe] Handle spread map entries of static type Null"
+commit 6c8dbd84a06afa15ef0aa841c2204c46d6f7e25f
+6c8dbd84a06afa15ef0aa841c2204c46d6f7e25f 2019-03-08 16:56:40 +0000 sortie@google.com [infra] Support different local named configurations in tools/test.dart.
+commit 166c5e4b3853a6747edf9772e010f44d38ddaa49
+166c5e4b3853a6747edf9772e010f44d38ddaa49 2019-03-08 16:20:23 +0000 paulberry@google.com Use subtype rather than assignability to disambiguate maps/sets.
+commit 2e9ff265274ec5dabcb4c978d3818d9ef0467d1e
+2e9ff265274ec5dabcb4c978d3818d9ef0467d1e 2019-03-08 16:11:08 +0000 lrn@google.com Fix overflow bug in BigInt implementations.
+commit 9a7679e9e1b675f093564eead2a5e17e4b6565e4
+9a7679e9e1b675f093564eead2a5e17e4b6565e4 2019-03-08 16:03:23 +0000 brianwilkerson@google.com Remove some of the tests of the task framework to reduce references to it
+commit 6e359857e4783a0e2c1c5fcfbe30826f4f0604ac
+6e359857e4783a0e2c1c5fcfbe30826f4f0604ac 2019-03-08 16:03:03 +0000 brianwilkerson@google.com Move ConstantEvaluationTarget out of the task model
+commit ccd2c85a1ace40b6a262b5230f11dfc26459286a
+ccd2c85a1ace40b6a262b5230f11dfc26459286a 2019-03-08 15:46:31 +0000 dmitryas@google.com [cfe] Handle spread map entries of static type Null
+commit 3160b084d8032f313c4b6e6f681092eb5ba66973
+3160b084d8032f313c4b6e6f681092eb5ba66973 2019-03-08 15:46:31 +0000 dmitryas@google.com [cfe] Compile null-aware spreads in non-const maps
+commit 0a13ef7d03c79aafc18a9165b30ef885cfe81bbd
+0a13ef7d03c79aafc18a9165b30ef885cfe81bbd 2019-03-08 15:46:31 +0000 dmitryas@google.com [cfe] Handle spread elements of static type Null
+commit b817b274c2f9ef1f3232f95aa15efbec9f6b3b80
+b817b274c2f9ef1f3232f95aa15efbec9f6b3b80 2019-03-08 15:46:31 +0000 dmitryas@google.com [cfe] Disambiguate between sets and maps with spreads
+commit 0e054b1c6ed0eb377a3806c57105bde629331c1a
+0e054b1c6ed0eb377a3806c57105bde629331c1a 2019-03-08 15:39:19 +0000 paulberry@google.com Some fixes for UI-as-code type inference
+commit 8d88316246ca49fdc99ecea47b50f0a945a27cb1
+8d88316246ca49fdc99ecea47b50f0a945a27cb1 2019-03-08 14:20:56 +0000 pquitslund@google.com fix for unawaited_futures
+commit 5eefbd8d14b070e4321abbe65c3554780ac3c3d1
+5eefbd8d14b070e4321abbe65c3554780ac3c3d1 2019-03-08 14:17:36 +0000 sjindel@google.com [vm/ffi] Add a slot for RawPointer::address.
+commit ff55d429f6c89e4cab99b7a2d8f21b0401b14c8d
+ff55d429f6c89e4cab99b7a2d8f21b0401b14c8d 2019-03-08 13:08:55 +0000 askesc@google.com [kernel] Collection concatenation nodes.
+commit 52ff930338340cc07e6ed519b8b51c53890835a7
+52ff930338340cc07e6ed519b8b51c53890835a7 2019-03-08 12:08:42 +0000 dmitryas@google.com [cfe] Desugar map spread entries in non-const map literals
+commit 76ff150df4897c8e9f276f56cb4405ab9a9cbfb5
+76ff150df4897c8e9f276f56cb4405ab9a9cbfb5 2019-03-08 12:08:42 +0000 dmitryas@google.com [cfe] Add type inference for spreads in map literals
+commit 95b0e57ac5aee0c291b0ed85e080fe68c0f9e921
+95b0e57ac5aee0c291b0ed85e080fe68c0f9e921 2019-03-08 12:06:35 +0000 vegorov@google.com [gardening] Disable ASAN's coredump suppression via ASAN_OPTIONS.
+commit 235e5f3709c4691e64c9c25fd40045180335311e
+235e5f3709c4691e64c9c25fd40045180335311e 2019-03-08 11:01:17 +0000 jensj@google.com Allow component to easily adopt libraries at will
+commit 64d8a165639536f0e67dde7489f764d97745d133
+64d8a165639536f0e67dde7489f764d97745d133 2019-03-08 10:40:07 +0000 jensj@google.com API changes to incremental compiler to support modular compilation
+commit 6231ba0b1831c6371b63fbc74110d9928f9c81d5
+6231ba0b1831c6371b63fbc74110d9928f9c81d5 2019-03-08 10:23:07 +0000 wtoalabi@gmail.com Added appropriate comma within comment.
+commit 283cabf1a1ae7c784f5e073cd1566e417a9ce1b4
+283cabf1a1ae7c784f5e073cd1566e417a9ce1b4 2019-03-08 09:39:12 +0000 sortie@google.com [infra] Reject unexpected extra arguments in approve_results.
+commit 299c6457cfc1b0132c4d29d9dfa0a82a3870f9c1
+299c6457cfc1b0132c4d29d9dfa0a82a3870f9c1 2019-03-08 09:11:07 +0000 dacoharkes@google.com [vm/ffi] Fix style guide violation
+commit b8069cbeca0117f80c0948194f00089b4b9195ca
+b8069cbeca0117f80c0948194f00089b4b9195ca 2019-03-08 08:36:07 +0000 johnniwinther@google.com Refactor computation of modular data
+commit 889d5d9240b5af4a3ca6786a9c7e15a281784ba4
+889d5d9240b5af4a3ca6786a9c7e15a281784ba4 2019-03-08 08:21:47 +0000 johnniwinther@google.com Fix type error in node_tracer
+commit 2fb6cd9f5ff78fb347795f383a748a1e37d23275
+2fb6cd9f5ff78fb347795f383a748a1e37d23275 2019-03-08 07:19:47 +0000 vegorov@google.com [vm] Fix Service::RequestAssets
+commit 585eb7f50798e4d0cb1c19e6e126b3c5b5d1ca7b
+585eb7f50798e4d0cb1c19e6e126b3c5b5d1ca7b 2019-03-08 02:19:06 +0000 bkonyi@google.com [ VM / Service ] Added `disableBreakpoints` parameter to `evaluate`, `evaluateInFrame` and `invoke` RPCs
+commit 9b0ac9ee03bf222f2bd110d439f084132b5e59ad
+9b0ac9ee03bf222f2bd110d439f084132b5e59ad 2019-03-08 02:10:47 +0000 brianwilkerson@google.com Extract diagnostic tests in preparation for supporting ui-as-code features
+commit 93d42679f0134fcf2c9db8b6696989bcedd24649
+93d42679f0134fcf2c9db8b6696989bcedd24649 2019-03-08 01:01:47 +0000 rmacnak@google.com [vm, arm64, fuchsia] Check for stack overflow / interrupts based on DSP instead of CSP.
+commit 05be278603f4327853126188819c10778196307f
+05be278603f4327853126188819c10778196307f 2019-03-08 00:32:17 +0000 srawlins@google.com Split MISSING_RETURN tests
+commit 1dd45592712299947974158e4d3937397d099ac1
+1dd45592712299947974158e4d3937397d099ac1 2019-03-08 00:06:37 +0000 vegorov@google.com [vm] Add Native->VM transitions when dereferencing API handles.
+commit 34953ffd7dff0a7f62a27252045bb07d59cfaf2e
+34953ffd7dff0a7f62a27252045bb07d59cfaf2e 2019-03-07 22:02:16 +0000 danrubel@google.com Cleanup some NNBD flags
+commit a47ffd2b502277aa2c2bbb18f583277f459b83a6
+a47ffd2b502277aa2c2bbb18f583277f459b83a6 2019-03-07 21:54:55 +0000 brianwilkerson@google.com Fix some errors in the control flow collections tests
+commit e1dfad1f2cc99082aa6f42d92641002d475d4036
+e1dfad1f2cc99082aa6f42d92641002d475d4036 2019-03-07 21:43:46 +0000 liama@google.com Attempt 4 at the upload abi dills script
+commit 4b609422e98d34da5a65e73df9bed5ffa95d05df
+4b609422e98d34da5a65e73df9bed5ffa95d05df 2019-03-07 21:29:36 +0000 scheglov@google.com Make AVAILABLE_SUGGESTION_SETS and related APIs non-experimental.
+commit 8332fb0631ad595d5d9cc50a8880ac587f3572e8
+8332fb0631ad595d5d9cc50a8880ac587f3572e8 2019-03-07 21:28:26 +0000 zra@google.com [vm] Adds an API call to dump the CPU profile to the timeline
+commit ccf756dae53a6ec3d0a602935b5d4201d1400338
+ccf756dae53a6ec3d0a602935b5d4201d1400338 2019-03-07 21:01:06 +0000 pquitslund@google.com Integration testing to ensure server lint name representations are correct.
+commit 34e1c9390605c48430d3ce81bb9a46d7e02c7399
+34e1c9390605c48430d3ce81bb9a46d7e02c7399 2019-03-07 20:35:47 +0000 pquitslund@google.com add prefer_null_aware_operators error code association
+commit 5c7b07f783587585a7fa9d0338b4903b36a3cdbd
+5c7b07f783587585a7fa9d0338b4903b36a3cdbd 2019-03-07 20:16:18 +0000 ajcbik@google.com [dart/vm] Fix bug in kernel binary flow graph builder
+commit 07b2f82203ab77e50049c343ad1ab583521c84ca
+07b2f82203ab77e50049c343ad1ab583521c84ca 2019-03-07 20:10:21 +0000 abarth@google.com [fuchsia] Remove unused header
+commit a6a5a2b6359bf08e91a99992c238fd6dad623ed9
+a6a5a2b6359bf08e91a99992c238fd6dad623ed9 2019-03-07 19:08:05 +0000 ajcbik@google.com [dart/fuzzer] Added more Dart constructs
+commit 48ac0bdd7235b8db6b1e2ebe2db838e9908a46ce
+48ac0bdd7235b8db6b1e2ebe2db838e9908a46ce 2019-03-07 18:43:39 +0000 liama@google.com Revert "Attempt 3 at the upload abi dill script"
+commit bc02b6ce7d625dd3a4b21c3e5f538b53887f79e2
+bc02b6ce7d625dd3a4b21c3e5f538b53887f79e2 2019-03-07 18:28:37 +0000 srawlins@google.com Split DEAD_CODE tests into their own file
+commit 6c1a05a388a2005d1fac3a9d03759cd02951ba6a
+6c1a05a388a2005d1fac3a9d03759cd02951ba6a 2019-03-07 18:17:57 +0000 danrubel@google.com update non-nullable flag in ErrorVerifier for angular plugin
+commit da831bda209e60a885dae7ce7aa6dcc41fb15a7d
+da831bda209e60a885dae7ce7aa6dcc41fb15a7d 2019-03-07 18:11:57 +0000 pquitslund@google.com fix lint name for unnecessary_overrides
+commit f2a8e71ff9d86a79fec1d43ec4e03e18fa09e421
+f2a8e71ff9d86a79fec1d43ec4e03e18fa09e421 2019-03-07 18:09:48 +0000 alexmarkov@google.com [vm] Decouple flow graph building of implicit closure functions from kernel reading
+commit f44fecbe39faa656b18e00e0018c31bfb345e8f8
+f44fecbe39faa656b18e00e0018c31bfb345e8f8 2019-03-07 18:04:12 +0000 brianwilkerson@google.com Fix the way type arguments for iterable and map are accessed
+commit 94a382bfb8ea1e0176b4675288fee912969e9574
+94a382bfb8ea1e0176b4675288fee912969e9574 2019-03-07 17:33:09 +0000 liama@google.com Attempt 3 at the upload abi dill script
+commit 924a934fe117a996537b5e4d8151337cc4a2e932
+924a934fe117a996537b5e4d8151337cc4a2e932 2019-03-07 17:32:59 +0000 liama@google.com Shrink the stack headroom if the stack is very small
+commit e5a833b06b25579e9d74a0b443d6271387db46a8
+e5a833b06b25579e9d74a0b443d6271387db46a8 2019-03-07 17:09:18 +0000 scheglov@google.com Comment out test that unexpectedly passes on Windows.
+commit 72548cde13501a116d24e243280b7f37dc99295e
+72548cde13501a116d24e243280b7f37dc99295e 2019-03-07 16:56:20 +0000 kustermann@google.com Revert "[vm, gc] The mutator's TLAB and the interpreter's lookup cache must be visited even if the mutator is unscheduled."
+commit bdb07f4a1f6ae4c9d3f642f762db0030e9411d89
+bdb07f4a1f6ae4c9d3f642f762db0030e9411d89 2019-03-07 15:56:08 +0000 sjindel@google.com [vm/ffi] Fix garbage collection of ffi.Pointer subtypes.
+commit cab4a7b48dc26ed6c5a30b5936c621c1571d5e40
+cab4a7b48dc26ed6c5a30b5936c621c1571d5e40 2019-03-07 15:33:33 +0000 pquitslund@google.com fix lint name for unnecessary_brace_in_string_interps
+commit 00aeae4ca81adbd4377af1de7fc0f27ff46fd3fb
+00aeae4ca81adbd4377af1de7fc0f27ff46fd3fb 2019-03-07 15:26:26 +0000 pquitslund@google.com add fix for no_duplicate_case_values
+commit 593405afda8132cd93fe86eb3dfe6cebb2ef73ac
+593405afda8132cd93fe86eb3dfe6cebb2ef73ac 2019-03-07 15:25:26 +0000 pquitslund@google.com add fix for use_rethrow
+commit 1551d9c660d83c2758ec97226ce9c78ea3bc4f6c
+1551d9c660d83c2758ec97226ce9c78ea3bc4f6c 2019-03-07 14:52:26 +0000 kevmoo@google.com Include correct stack during error with Stream.join
+commit 309140693c4fb45c13994b9d2491ecc8a842fe67
+309140693c4fb45c13994b9d2491ecc8a842fe67 2019-03-07 13:29:45 +0000 danrubel@google.com Revise non-nullable flag from AstBuilder to ErrorVerifier
+commit 2d3b1055d3aa25b50de3f54afd61e0c302bc87a8
+2d3b1055d3aa25b50de3f54afd61e0c302bc87a8 2019-03-07 13:16:06 +0000 dacoharkes@google.com [vm/ffi] remove RuntimeError/Fail expectation from status files
+commit b4e9e46f8186d63048577b7d9377e702209c3772
+b4e9e46f8186d63048577b7d9377e702209c3772 2019-03-07 12:50:10 +0000 kustermann@google.com [Gardening] Add tools/diff_results.dart which can query the test results database and report a diff in test results from two commits
+commit f1cc9c7cf1a8b79a0bdfe4e3456f37775fd79635
+f1cc9c7cf1a8b79a0bdfe4e3456f37775fd79635 2019-03-07 11:41:25 +0000 askesc@google.com [cfe] Classes for if, for and for-in elements.
+commit e3f0ca80e5c8509c34289d7c8592578f721c8fd1
+e3f0ca80e5c8509c34289d7c8592578f721c8fd1 2019-03-07 10:11:05 +0000 kmillikin@google.com [cfe] Compile null-aware spreads in non-const lists and sets
+commit e8fa9a019bd4f5e2b43af3f2560fc7ae970c37f7
+e8fa9a019bd4f5e2b43af3f2560fc7ae970c37f7 2019-03-07 08:47:13 +0000 kmillikin@google.com [ddc] Fix a front end test failure
+commit b71f6afd2c21dd66ad42aebc30bbb29dd29b41e7
+b71f6afd2c21dd66ad42aebc30bbb29dd29b41e7 2019-03-07 08:20:08 +0000 dacoharkes@google.com [vm/ffi] enable function stress test on macos
+commit 4ec72c1eb11f37b1ce4046eeb01c05f7e81629a9
+4ec72c1eb11f37b1ce4046eeb01c05f7e81629a9 2019-03-07 02:04:41 +0000 zichangguo@google.com [VM-Runtime]Fix source report coverage to not include field without function initializer
+commit 253499fe68b1efaed5c2be699b4e59af3703c0f3
+253499fe68b1efaed5c2be699b4e59af3703c0f3 2019-03-07 01:01:02 +0000 rmacnak@google.com [vm, gc] The mutator's TLAB and the interpreter's lookup cache must be visited even if the mutator is unscheduled.
+commit 980e5c7b57c6f1d17d67e6f419b45e89186b88cd
+980e5c7b57c6f1d17d67e6f419b45e89186b88cd 2019-03-07 00:20:30 +0000 rmacnak@google.com [vm] Mark VM isolate objects at heap finalization instead of allocation.
+commit e48ad45fbdcbf65db1b65a117dd239cb6bdc0c00
+e48ad45fbdcbf65db1b65a117dd239cb6bdc0c00 2019-03-07 00:19:40 +0000 rmacnak@google.com [vm, interpreter] Enable field guards.
+commit a7d790bbbe347b8e3b70dfff2f40aa54f2d2862a
+a7d790bbbe347b8e3b70dfff2f40aa54f2d2862a 2019-03-06 23:57:31 +0000 brianwilkerson@google.com Fix cast exception in resolution
+commit 2f53b7913cfa3978308c49cab49d52bbba283453
+2f53b7913cfa3978308c49cab49d52bbba283453 2019-03-06 22:42:26 +0000 markzipan@google.com [dartdevc] Including the current library for members from within an InstanceConstant
+commit 0124541d5f5d04cc75e51afcd1cb11ac0f0aa572
+0124541d5f5d04cc75e51afcd1cb11ac0f0aa572 2019-03-06 21:43:50 +0000 paulberry@google.com Deprecate AST data structures that will be obseleted by the "UI as code" feature
+commit 1751135fc351e58ff5f7d772b781c5ca27484367
+1751135fc351e58ff5f7d772b781c5ca27484367 2019-03-06 21:23:10 +0000 athom@google.com [infra] Increase number of shards on app-* builders
+commit 6988347b53fd29c444e03c5ff729cbe5bcc53cc2
+6988347b53fd29c444e03c5ff729cbe5bcc53cc2 2019-03-06 21:16:30 +0000 abarth@google.com [fuchsia] Migrate to lib/sys/cpp
+commit 995b1c9adc4bf5630004a4be0b5abb34b2ede44e
+995b1c9adc4bf5630004a4be0b5abb34b2ede44e 2019-03-06 21:14:40 +0000 arbullard@google.com FE Server shouldn't try to invalidate other file schemes
+commit 975cc65c179d1d93aec59c39fd92433502dea7ae
+975cc65c179d1d93aec59c39fd92433502dea7ae 2019-03-06 21:09:30 +0000 rmacnak@google.com [vm, interpreter] Implement interpreter stubs for IA32.
+commit 85dec3423c4fd6f5d41b63776e43e7ac42589639
+85dec3423c4fd6f5d41b63776e43e7ac42589639 2019-03-06 20:55:00 +0000 pquitslund@google.com add fix for unnecessary_new lint
+commit 17bf9d13b12189033838f047bf2a5c5e88ebc05d
+17bf9d13b12189033838f047bf2a5c5e88ebc05d 2019-03-06 20:47:45 +0000 brianwilkerson@google.com Delay disambiguating maps and sets until we know whether there are any conflicts
+commit 079309fcd68817f804bebc5dcdd3209a65fcabf2
+079309fcd68817f804bebc5dcdd3209a65fcabf2 2019-03-06 20:21:07 +0000 brianwilkerson@google.com Create curly braces when resynthesizing map and set literals
+commit 68c9909ef8fd95f5483f89e930f95c8140a86660
+68c9909ef8fd95f5483f89e930f95c8140a86660 2019-03-06 20:12:07 +0000 paulberry@google.com Re-apply workaround for bug fixed by closures containing type promotions in variables with inferred types.
+commit 68946df573701de7e00c9ccd1726b39fbdb30d6d
+68946df573701de7e00c9ccd1726b39fbdb30d6d 2019-03-06 20:02:18 +0000 rmacnak@google.com [vm] Also print version information in assertion failures, not just faults.
+commit 0c231060f4d21d34f3c2d45fc601525e0b9deec3
+0c231060f4d21d34f3c2d45fc601525e0b9deec3 2019-03-06 19:40:39 +0000 liama@google.com Revert "Another attempt to fix the upload script."
+commit d1e60e0f3d375eb6fa1f8786ed8b0958cfad18d6
+d1e60e0f3d375eb6fa1f8786ed8b0958cfad18d6 2019-03-06 19:35:58 +0000 scheglov@google.com Remove @failingTest from a test that stopped failing.
+commit 825d03c5851060b17588386fd3e3be1784d71198
+825d03c5851060b17588386fd3e3be1784d71198 2019-03-06 19:16:27 +0000 zra@google.com [vm] Remove malloc_hooks support for jemalloc
+commit 8bb8d1185993fa92cc05af61290ab3bba7ea34ba
+8bb8d1185993fa92cc05af61290ab3bba7ea34ba 2019-03-06 18:57:13 +0000 paulberry@google.com Prepare to publish analyzer_plugin version 0.0.1-alpha.7
+commit 0e578056e96a0538dc82e548269453b4bf386e30
+0e578056e96a0538dc82e548269453b4bf386e30 2019-03-06 18:01:37 +0000 liama@google.com Another attempt to fix the upload script.
+commit 90b61e2fdef747c4be6d150e43d7d39ee18855e3
+90b61e2fdef747c4be6d150e43d7d39ee18855e3 2019-03-06 17:29:29 +0000 scheglov@google.com Start implementing linker and resynthesizing.
+commit a1226b149098d14bd182dd4a8741fd9b755ddb63
+a1226b149098d14bd182dd4a8741fd9b755ddb63 2019-03-06 17:20:49 +0000 scheglov@google.com Write and read almost all nodes.
+commit ba5644b76cb811e8f01ffb375b87d20d6295749c
+ba5644b76cb811e8f01ffb375b87d20d6295749c 2019-03-06 17:16:19 +0000 paulberry@google.com Fix handling of closures containing type promotions in variables with inferred types.
+commit 7a985597812bf4948faf7b1119966d68506848f8
+7a985597812bf4948faf7b1119966d68506848f8 2019-03-06 16:48:09 +0000 dacoharkes@google.com [vm/ffi] make Pointer.toString() uniform on all operating systems
+commit 12fcb9136c635904910ee1779021e638eaf104fa
+12fcb9136c635904910ee1779021e638eaf104fa 2019-03-06 15:31:09 +0000 dacoharkes@google.com [cfe] Make resolveInputUri available for pkg/vm
+commit 5441ff672b92223623215dc2b892b4578c2fc561
+5441ff672b92223623215dc2b892b4578c2fc561 2019-03-06 15:28:59 +0000 pquitslund@google.com add fix for unnecessary_const lints
+commit 9645b190601b1921b8c3ec02bd7fdd51b33488d9
+9645b190601b1921b8c3ec02bd7fdd51b33488d9 2019-03-06 15:06:40 +0000 sortie@google.com [infra] Link to the documentation in the new workflow tools.
+commit 150c58c13fcfe9427f9a5e660e37d3a1cffc115e
+150c58c13fcfe9427f9a5e660e37d3a1cffc115e 2019-03-06 13:59:46 +0000 whesse@google.com [infra] Shard app-kernel tests that were causing timeouts
+commit 105912339c482d6bc0b781766519a1cb855a6ec6
+105912339c482d6bc0b781766519a1cb855a6ec6 2019-03-06 13:59:06 +0000 dmitryas@google.com [cfe] Inherit SpreadElement from Expression, not ExpressionJudgment
+commit a85e481d3d51656721b019b52f8808654343e213
+a85e481d3d51656721b019b52f8808654343e213 2019-03-06 13:56:36 +0000 sjindel@google.com [vm/gardening] Fix status file for entrypoints_verification_test.
+commit fa0d99156f720df84ed48469615d482e81126be5
+fa0d99156f720df84ed48469615d482e81126be5 2019-03-06 13:43:46 +0000 brianwilkerson@google.com Remove task model initialization
+commit 3712235e0ec510b7779bb4a2e63a5adfe65843da
+3712235e0ec510b7779bb4a2e63a5adfe65843da 2019-03-06 13:43:37 +0000 brianwilkerson@google.com Remove the task graph and the tool that produces it
+commit 99d028be773c4a178bde76ef3a2d7d7ba300b5bc
+99d028be773c4a178bde76ef3a2d7d7ba300b5bc 2019-03-06 12:43:07 +0000 athom@google.com [infra] Make promote.py work with newer versions of gsutil
+commit 9d9f599ca93e6e1a706ff0fe7305fc4d68b71f31
+9d9f599ca93e6e1a706ff0fe7305fc4d68b71f31 2019-03-06 11:37:27 +0000 kmillikin@google.com [cfe] Compile spread in sets
+commit b5a1f6c36b51cf8713946cb09366753ef2c25a64
+b5a1f6c36b51cf8713946cb09366753ef2c25a64 2019-03-06 10:30:37 +0000 askesc@google.com Reland "[CFE] Move constant evaluation number semantics handling to front end."
+commit ea6e83004b0a0097c5ba8782f133ac73755e0499
+ea6e83004b0a0097c5ba8782f133ac73755e0499 2019-03-06 08:32:05 +0000 johnniwinther@google.com Use @pragma instead of package:meta/dart2js in tests
+commit 2448445826b0ac9c65ec252eed0fcf18d2ea001e
+2448445826b0ac9c65ec252eed0fcf18d2ea001e 2019-03-06 02:19:54 +0000 scheglov@google.com Make IfStatementImpl use IfMixin.
+commit 7ba8995917bdbead97cd6aed31e50ead48f86cc6
+7ba8995917bdbead97cd6aed31e50ead48f86cc6 2019-03-06 01:07:14 +0000 liama@google.com Download ABI dills during gclient sync
+commit dc1f2bd087fc08c2856e75f7ed6e8362fb21a182
+dc1f2bd087fc08c2856e75f7ed6e8362fb21a182 2019-03-06 00:35:34 +0000 alexmarkov@google.com [vm] Avoid assertion for non-finalized type parameter of expression evaluation function
+commit ef969c8c7ec2bd13c4203c239975ea8edf4300e9
+ef969c8c7ec2bd13c4203c239975ea8edf4300e9 2019-03-06 00:26:36 +0000 liama@google.com Revert "Update the build bot name restriction in upload_abi_dills.sh"
+commit 57f16820cd8165a335c11213bec6d81a27128204
+57f16820cd8165a335c11213bec6d81a27128204 2019-03-06 00:10:04 +0000 rnystrom@google.com Add tests for "await" inside spread, if, and for.
+commit cbc404b6de6ad61f0403c4d43b7043c6eec43edd
+cbc404b6de6ad61f0403c4d43b7043c6eec43edd 2019-03-05 23:47:14 +0000 bkonyi@google.com [VM] Cleanup status files some more
+commit dc02d859f4480eda8d1d518221e041ef5c38b1c8
+dc02d859f4480eda8d1d518221e041ef5c38b1c8 2019-03-05 23:41:29 +0000 fishythefish@google.com Ensure all SetConstantValues are JavaScriptSetConstants.
+commit f112b672e7ed9ee37ca60247d958488c3b969a32
+f112b672e7ed9ee37ca60247d958488c3b969a32 2019-03-05 23:33:48 +0000 paulberry@google.com Use ListLiteral.elements2 instead of ListLiteral.elements.
+commit 4a7f9d7c11c3f62425efbc6f2952a73d79a648a4
+4a7f9d7c11c3f62425efbc6f2952a73d79a648a4 2019-03-05 23:33:24 +0000 paulberry@google.com Remove FindNode.setLiteral method.
+commit 2922878ce98f086c99be6983acfe77caf33ce7e7
+2922878ce98f086c99be6983acfe77caf33ce7e7 2019-03-05 23:06:22 +0000 rmacnak@google.com [vm, compiler] Fix GuardFieldTypeInstr to update the original field.
+commit 4eedef85a377dd8db007b26a9f34b8f18dd47de8
+4eedef85a377dd8db007b26a9f34b8f18dd47de8 2019-03-05 22:58:12 +0000 liama@google.com Update the build bot name restriction in upload_abi_dills.sh
+commit 60de5b49839d9a85eeddec39f6a84cb644b3cb75
+60de5b49839d9a85eeddec39f6a84cb644b3cb75 2019-03-05 22:32:22 +0000 rmacnak@google.com [vm] Avoid quadratic growth in (Malloc)TextBuffer and ZoneTextBuffer.
+commit c921716a307f640d03ae0b6496e4a1d46eb8d47b
+c921716a307f640d03ae0b6496e4a1d46eb8d47b 2019-03-05 20:48:31 +0000 liama@google.com Add upload_abi_dills.sh to dart-sdk-linux in test_matrix.json
+commit 47b417c88e6f331b0b6ff0126fd572238c0370c9
+47b417c88e6f331b0b6ff0126fd572238c0370c9 2019-03-05 20:39:41 +0000 paulberry@google.com Remove FindNode methods related to AST data structures that will be removed.
+commit c7930381375f9173c9e066debfa5510d9ae855cd
+c7930381375f9173c9e066debfa5510d9ae855cd 2019-03-05 20:20:31 +0000 scheglov@google.com Identify flutter_web in Flutter.
+commit 1da7c0d472bc4e875cc69ea1d306eec5135e1f78
+1da7c0d472bc4e875cc69ea1d306eec5135e1f78 2019-03-05 19:54:11 +0000 dmitryas@google.com [cfe] Fix type checks in spreads within lists and sets
+commit 09a1cf67e6ec7e712c8a9f0545855402017bd832
+09a1cf67e6ec7e712c8a9f0545855402017bd832 2019-03-05 19:54:11 +0000 dmitryas@google.com [cfe] Don't replace spreads with invalid expressions after inference
+commit 51a334caa7907f9358e34133df10d83fdd85ea0a
+51a334caa7907f9358e34133df10d83fdd85ea0a 2019-03-05 18:48:51 +0000 alexmarkov@google.com [vm] Remove kernel reading from BuildArgumentTypeChecks
+commit 927e758e96fc6863c4732ae19522b8d28d2632fc
+927e758e96fc6863c4732ae19522b8d28d2632fc 2019-03-05 18:36:41 +0000 scheglov@google.com Stop using package:html in analyzer.
+commit 53438199a48d261d2ec5d7c098ad11e30800bbfc
+53438199a48d261d2ec5d7c098ad11e30800bbfc 2019-03-05 18:16:31 +0000 dantup@google.com Tweak version numbers in LSP readme
+commit 58a048712537dd61e53655176ebd918095e59251
+58a048712537dd61e53655176ebd918095e59251 2019-03-05 18:00:31 +0000 danrubel@google.com more tests for 34610 and 36009
+commit 2071d1284d17de106c0e3b7e3a7257d51af7b0e6
+2071d1284d17de106c0e3b7e3a7257d51af7b0e6 2019-03-05 17:43:56 +0000 dacoharkes@google.com [vm/ffi] Fix crash on toString for dart:ffi trampoline functions
+commit aacd8c7711f026cf9e8425ebbd9c7cde6fd3cb41
+aacd8c7711f026cf9e8425ebbd9c7cde6fd3cb41 2019-03-05 17:33:51 +0000 pquitslund@google.com de-dup machine format errors
+commit cc455ecc1d5a4f45297831472086d3bbe4b78d9b
+cc455ecc1d5a4f45297831472086d3bbe4b78d9b 2019-03-05 17:16:11 +0000 liama@google.com Add use_abi_version flag, and plumb ABI version to version.h
+commit 96e982f05455c078c686592e39e92724e6378cf5
+96e982f05455c078c686592e39e92724e6378cf5 2019-03-05 17:08:31 +0000 danrubel@google.com Improve await-outside-async error recovery
+commit e033b676dd4651969171f9ec995c675db9d22da1
+e033b676dd4651969171f9ec995c675db9d22da1 2019-03-05 15:35:58 +0000 danrubel@google.com fix parser crash in unterminated string literal inside unterminated interpolation
+commit ed8357cf83b1c54d0018ffc75e8ee16e43e2bda5
+ed8357cf83b1c54d0018ffc75e8ee16e43e2bda5 2019-03-05 14:17:08 +0000 sjindel@google.com Re-land "[vm/ffi] Stress tests for FFI functions.""
+commit 6227ab0b97f0e351d586bc566eeec8954f442d81
+6227ab0b97f0e351d586bc566eeec8954f442d81 2019-03-05 12:17:18 +0000 johnniwinther@google.com Replace @ForceInline with @pragma in dart:html
+commit 204651f3ab71f75d66703f7c502e7f0c58089db8
+204651f3ab71f75d66703f7c502e7f0c58089db8 2019-03-05 11:00:17 +0000 johnniwinther@google.com Replace package:expect annotations with @pragma
+commit 45e6f83cd611ec0bc3fc5b285d5977f3f8e2c78e
+45e6f83cd611ec0bc3fc5b285d5977f3f8e2c78e 2019-03-05 10:53:17 +0000 dacoharkes@google.com gitignore visual studio project files
+commit ca24e7aa10383dc0cda5b92a6c85402eae537e45
+ca24e7aa10383dc0cda5b92a6c85402eae537e45 2019-03-05 10:38:38 +0000 sigurdm@google.com [vm] Allow no main method when doing type flow analysis
+commit c769743f679365cc5d6eb4c606fce6afa2605adf
+c769743f679365cc5d6eb4c606fce6afa2605adf 2019-03-05 10:18:37 +0000 askesc@google.com [CFE] Transform constants in annotations on all parameters.
+commit 718b36ed73e45d7304b4b889ee622ae90e1c63de
+718b36ed73e45d7304b4b889ee622ae90e1c63de 2019-03-05 09:28:27 +0000 kmillikin@google.com [cfe] Use for-in instead of List.addAll for list spread
+commit 99093c0610238cafa80567068c4a3ade12c1f973
+99093c0610238cafa80567068c4a3ade12c1f973 2019-03-05 09:23:57 +0000 askesc@google.com [fasta] Required but not inferred constant context.
+commit 822ebdd1e027cd6c925179620a14a1d02a56a6c0
+822ebdd1e027cd6c925179620a14a1d02a56a6c0 2019-03-05 09:23:57 +0000 askesc@google.com [fasta] Wrap non-const variable accesses inside const expressions.
+commit 013cf686244bec04649363022eb3f8aaaf199e42
+013cf686244bec04649363022eb3f8aaaf199e42 2019-03-05 08:56:18 +0000 johnniwinther@google.com Replace js_helper annotations with @pragma
+commit 1a88421d39f676572e55c3fc2bfb40c6bd4c4a33
+1a88421d39f676572e55c3fc2bfb40c6bd4c4a33 2019-03-05 07:39:31 +0000 jensj@google.com Allow to change .package uri in incremental compiler
+commit 2695cdfbb1078fdd305195a2157ce1649b85477c
+2695cdfbb1078fdd305195a2157ce1649b85477c 2019-03-05 07:39:31 +0000 jensj@google.com Change incremental compiler to take entry points (plural)
+commit 3124125008f1e3e68f269fd529b8ae4bfbc79eeb
+3124125008f1e3e68f269fd529b8ae4bfbc79eeb 2019-03-05 05:51:41 +0000 scheglov@google.com Move Flutter utility methods into a class, which can be instantiated either with regular package:flutter, or with package_flutter_web.
+commit 5a8bdc7f34dc2e352571099796f09928eb5d99e7
+5a8bdc7f34dc2e352571099796f09928eb5d99e7 2019-03-05 01:15:30 +0000 jmesserly@google.com [dartdevc] fix #36052, missing key in map should result in null
+commit 643895befcc4d3ee66b4e514eb6d8a6e0defe69d
+643895befcc4d3ee66b4e514eb6d8a6e0defe69d 2019-03-05 00:45:35 +0000 brianwilkerson@google.com Fix two failing tests on the bots (TBR)
+commit 24d28e8f481cbee86e3d15c703e75cb3ac48bc6d
+24d28e8f481cbee86e3d15c703e75cb3ac48bc6d 2019-03-04 22:42:16 +0000 scheglov@google.com Write SetOrMapLiteral instead of MapLiteral or SetLiteral.
+commit c86a9ece5f063506c2163bbc7d7775fff4b00964
+c86a9ece5f063506c2163bbc7d7775fff4b00964 2019-03-04 22:00:46 +0000 brianwilkerson@google.com First cut at upward inference for the ui-as-code features
+commit 2329fccdb989445f0b62d02653d27bd26b1c4d16
+2329fccdb989445f0b62d02653d27bd26b1c4d16 2019-03-04 21:52:20 +0000 scheglov@google.com Use visitForStatement2() and read as ForStatement2 and its parts.
+commit a7a4c95df7616deb6a62e0c5b6596b5ece116c39
+a7a4c95df7616deb6a62e0c5b6596b5ece116c39 2019-03-04 21:47:21 +0000 mfairhurst@google.com Summarize SetOrMapLiteral
+commit 1abcbe1318497261a5ee615079ff83e2f7755c06
+1abcbe1318497261a5ee615079ff83e2f7755c06 2019-03-04 21:21:24 +0000 paulberry@google.com Eliminate uses of old AST node types from parts of the analyzer
+commit 1c27b817fc91024ce84887c7922a2d9fff43ab97
+1c27b817fc91024ce84887c7922a2d9fff43ab97 2019-03-04 20:33:44 +0000 ariaye@google.com New protocol to inspect analysis server state at code completion time
+commit 571ea80e1101e706980ea8aefa7fc18a0c8ba2ec
+571ea80e1101e706980ea8aefa7fc18a0c8ba2ec 2019-03-04 19:30:53 +0000 ajcbik@google.com [vm/compiler] added assert to kernel flowgraph builder
+commit b88e6dd910a4bdbc884140f8acec7d5328149d26
+b88e6dd910a4bdbc884140f8acec7d5328149d26 2019-03-04 19:20:53 +0000 rnystrom@google.com Fix the type argument on the deep flattening spread test.
+commit 62df51cb34302c01111407370f9507e47de25b1c
+62df51cb34302c01111407370f9507e47de25b1c 2019-03-04 19:19:13 +0000 paulberry@google.com Eliminate uses of old AST node types from parts of the analyzer
+commit 7d8ffe0daf8148dd281884ec3911f1274e21f0af
+7d8ffe0daf8148dd281884ec3911f1274e21f0af 2019-03-04 18:12:22 +0000 paulberry@google.com Eliminate uses of old AST node types from pkg/analyzer/lib/src/test_utilities
+commit 2e463506b776acb2c71294f8fbab9e94b31c5375
+2e463506b776acb2c71294f8fbab9e94b31c5375 2019-03-04 17:44:41 +0000 scheglov@google.com Read more nodes from serialized AST.
+commit e91c3b3ab49ac659b9cac8b3b3adae986f0a927c
+e91c3b3ab49ac659b9cac8b3b3adae986f0a927c 2019-03-04 17:41:51 +0000 whesse@google.com Update pkg:html version to 0.13.4+1
+commit 819f44532c6d12afabc4f36d334384ec425ae557
+819f44532c6d12afabc4f36d334384ec425ae557 2019-03-04 17:28:01 +0000 paulberry@google.com Eliminate uses of old AST node types from pkg/analyzer/lib/src/task/strong
+commit 095e651ff234f1f3fab797e1b5f6c66d7fba0299
+095e651ff234f1f3fab797e1b5f6c66d7fba0299 2019-03-04 16:14:16 +0000 paulberry@google.com Eliminate uses of old AST node types from pkg/analyzer/lib/src/services
+commit 2c087433dbeb36fecd2758ab632fcffb30ef95e9
+2c087433dbeb36fecd2758ab632fcffb30ef95e9 2019-03-04 15:35:31 +0000 sgrekhov@unipro.ru [co19] DEPS and status files updated
+commit b095a6be8ee418f36abba33088b97c238c79b6ee
+b095a6be8ee418f36abba33088b97c238c79b6ee 2019-03-04 14:11:46 +0000 athom@google.com [infra] Update checked in SDKs to 2.2.1-dev.0.0
+commit f46186ac49f7ac86052f42016677e763958d030d
+f46186ac49f7ac86052f42016677e763958d030d 2019-03-04 13:38:29 +0000 sortie@google.com [infra] Fix update_flakiness using wrong key when computing matches.
+commit 03e46ee96936d477abdb23be2f9db2e3c0ff1fe5
+03e46ee96936d477abdb23be2f9db2e3c0ff1fe5 2019-03-04 13:04:46 +0000 sortie@google.com [infra] Add expectation and matches information to flaky.json.
+commit 15f1fc212c609785950af084cf82197cb7d2cb70
+15f1fc212c609785950af084cf82197cb7d2cb70 2019-03-04 10:29:16 +0000 dantup@google.com Add a flag to allow only analyzing project folders that contain open files
+commit bc2b78886d0a497d7b4fb77e2a12d82be4b3f33e
+bc2b78886d0a497d7b4fb77e2a12d82be4b3f33e 2019-03-04 10:20:56 +0000 askesc@google.com [CFE] handle set literals in constant evaluator.
+commit 2b2e71770cd704a56ed827b85d4465497f3e62cb
+2b2e71770cd704a56ed827b85d4465497f3e62cb 2019-03-04 10:20:56 +0000 askesc@google.com [kernel] Add SetConstant node to Kernel.
+commit 084e98e3a3dab8c6176ece3148bc211002dbe06b
+084e98e3a3dab8c6176ece3148bc211002dbe06b 2019-03-04 09:09:56 +0000 kustermann@google.com [VM] Ensure that a newly allocated object is either new or added to remembered set if we want to eliminate write barriers to it
+commit 95cfa6c583ea43c7506df030ee8c1b066de7c71c
+95cfa6c583ea43c7506df030ee8c1b066de7c71c 2019-03-04 08:40:15 +0000 johnniwinther@google.com Support native class and js-interop annotations through ir constants
+commit 62d22083acb04777ab4c2621911ff8ca0686e4e2
+62d22083acb04777ab4c2621911ff8ca0686e4e2 2019-03-04 08:40:15 +0000 johnniwinther@google.com Flatten native member resolver
+commit 053dfbb2ac7e95cebe3f4f31d57efc49a8faa68f
+053dfbb2ac7e95cebe3f4f31d57efc49a8faa68f 2019-03-04 08:29:56 +0000 kmillikin@google.com [cfe] Compile list spread elements into block expressions
+commit 1e0d5144692f5545384faa6d47e46478376adffb
+1e0d5144692f5545384faa6d47e46478376adffb 2019-03-02 15:59:12 +0000 brianwilkerson@google.com Address comments from a previous CL
+commit 156790474e914351780782440058da754cf9288e
+156790474e914351780782440058da754cf9288e 2019-03-02 03:20:51 +0000 scheglov@google.com Allocate fieldOffsets once, in computeFieldOffsets().
+commit 4a144e631f17b2ea3190877a28cabedc9b486d03
+4a144e631f17b2ea3190877a28cabedc9b486d03 2019-03-02 01:37:32 +0000 brianwilkerson@google.com Fix production of outline for incomplete generic function types (issue 36059)
+commit 4bd3e4b561a1b6fe6249d0b6983018064bf59390
+4bd3e4b561a1b6fe6249d0b6983018064bf59390 2019-03-02 00:24:41 +0000 scheglov@google.com Write more AST nodes to summary.
+commit fa2d32e80a64b81da3f0dee817866dc605241030
+fa2d32e80a64b81da3f0dee817866dc605241030 2019-03-02 00:16:41 +0000 vsm@google.com [ddc] Add api to query loaded libs
+commit 5a335957f22eb08c58a8642614534d83237df740
+5a335957f22eb08c58a8642614534d83237df740 2019-03-02 00:02:01 +0000 jmesserly@google.com [analyzer] fix #33119, add strict-raw-types flag
+commit 76d31a251e21e77f287301e2e67cfab274163fda
+76d31a251e21e77f287301e2e67cfab274163fda 2019-03-01 23:56:01 +0000 jmesserly@google.com [dartdevc] fix hot restart static field reset
+commit 2f158b99977909385c42eec48b707db9414e42f0
+2f158b99977909385c42eec48b707db9414e42f0 2019-03-01 23:00:41 +0000 liama@google.com Add ABI_VERSION to the version file and a script to upload dills to CPID
+commit 0491d5cde71088e8a54798d27d110737be11a9d4
+0491d5cde71088e8a54798d27d110737be11a9d4 2019-03-01 22:55:14 +0000 regis@google.com Revert "[VM runtime] Dual mapping of executable pages."
+commit 5f9bd87689b0d68b4637db3c08df6d5dc05fa356
+5f9bd87689b0d68b4637db3c08df6d5dc05fa356 2019-03-01 22:43:31 +0000 paulberry@google.com Eliminate uses of old AST node types from parts of the analyzer
+commit 38d675287ceb799d3aa6a2335876609bc8198460
+38d675287ceb799d3aa6a2335876609bc8198460 2019-03-01 22:35:11 +0000 paulberry@google.com Eliminate uses of old AST node types from parts of the analyzer
+commit df59b0975664aaeaa36a1bd9dde57ba00cc4c807
+df59b0975664aaeaa36a1bd9dde57ba00cc4c807 2019-03-01 22:34:21 +0000 liama@google.com Fail early if a thread has no stack headroom
+commit 44186dfdcda19038616b48914d10b4b7a9ccfc2f
+44186dfdcda19038616b48914d10b4b7a9ccfc2f 2019-03-01 22:19:31 +0000 regis@google.com [VM runtime] Dual mapping of executable pages.
+commit 298866ed94aa3578ded3e818b87ebb975a217d85
+298866ed94aa3578ded3e818b87ebb975a217d85 2019-03-01 19:48:02 +0000 scheglov@google.com Write / read resolved AST to / from flat buffers.
+commit 863f7df7aad2d315d870b5c5ff5a64ec298c9280
+863f7df7aad2d315d870b5c5ff5a64ec298c9280 2019-03-01 19:25:00 +0000 scheglov@google.com Include debug info when dart:core is not resolved.
+commit f00fe7a28923ad62007fdd32f254e030310c8b60
+f00fe7a28923ad62007fdd32f254e030310c8b60 2019-03-01 19:23:36 +0000 brianwilkerson@google.com Rework of downward inference for the ui-as-code features
+commit 1a9f40b1c57b26f33652f9fbd77eb8dde7a6fa9d
+1a9f40b1c57b26f33652f9fbd77eb8dde7a6fa9d 2019-03-01 19:07:30 +0000 bkonyi@google.com [VM] Remove unnecessary assert to fix cc/PrintJSON test
+commit c2a48ee065a336be5c26c45fec0f145d4dd2aefd
+c2a48ee065a336be5c26c45fec0f145d4dd2aefd 2019-03-01 18:59:10 +0000 regis@google.com [VM] Fix bigint left shift that could cause heap corruption when intrinsified.
+commit 9201b906ee8e44eaca6585991741f302c8df539b
+9201b906ee8e44eaca6585991741f302c8df539b 2019-03-01 18:46:00 +0000 johnniwinther@google.com Convert ir.Constant to ConstantValue
+commit dc555eb9a7ebc122cd8a298aaf36f739aa1d12e4
+dc555eb9a7ebc122cd8a298aaf36f739aa1d12e4 2019-03-01 18:05:40 +0000 rmacnak@google.com [vm] On Fuchsia, enable timeline streams based on the state of system trace categories.
+commit 644026da51d05276f78ccab245909e657520dd6d
+644026da51d05276f78ccab245909e657520dd6d 2019-03-01 18:03:25 +0000 paulberry@google.com Eliminate uses of old AST node types from AstFactory
+commit c35304ef187d85e60d5135e95a241b6374bd08f6
+c35304ef187d85e60d5135e95a241b6374bd08f6 2019-03-01 17:24:40 +0000 alexmarkov@google.com [vm/simdbc,interpreter] Preserve arguments descriptor around call to inline cache miss handler
+commit a681a6297aa6f0d83873005e70019d1ba9e96fd7
+a681a6297aa6f0d83873005e70019d1ba9e96fd7 2019-03-01 17:15:00 +0000 aam@google.com [vm/incremental compiler] Add reject/compile_expresson test for incremental compiler.
+commit ce1fb830d0ae59f545965e1fdd0855dcdf4fa55b
+ce1fb830d0ae59f545965e1fdd0855dcdf4fa55b 2019-03-01 16:31:39 +0000 sortie@google.com [infra] Suggest running gsutil.py config in approve_results if needed.
+commit 2c8f70cde39e1567af1d6e65c10a7ea5373a4531
+2c8f70cde39e1567af1d6e65c10a7ea5373a4531 2019-03-01 15:17:13 +0000 dmitryas@google.com [cfe] Add type inference for spreads in set literals
+commit b36c56ff845b0d09a7eae52d5e7e7bae9f7f1cce
+b36c56ff845b0d09a7eae52d5e7e7bae9f7f1cce 2019-03-01 15:17:13 +0000 dmitryas@google.com [cfe] Add type inference for spreads in list literals
+commit e4aa4325b7728a473099701ef4ebe09d858fbac9
+e4aa4325b7728a473099701ef4ebe09d858fbac9 2019-03-01 15:17:13 +0000 dmitryas@google.com [fasta] Enable spread collections in unit tests
+commit 1471b8e444a71d22d23ababc120c8692d2580202
+1471b8e444a71d22d23ababc120c8692d2580202 2019-03-01 14:34:15 +0000 askesc@google.com Revert "[CFE] Move constant evaluation number semantics handling to front end."
+commit 6e060470047928e9326f5d0ec73fb7419b86f2b9
+6e060470047928e9326f5d0ec73fb7419b86f2b9 2019-03-01 14:24:53 +0000 jensj@google.com AST to Text more resilient in writeAdditionalExports
+commit c2b466b09f129ba4a7cb7f1322f5021654627304
+c2b466b09f129ba4a7cb7f1322f5021654627304 2019-03-01 13:30:53 +0000 askesc@google.com [CFE] Move constant evaluation number semantics handling to front end.
+commit b60b664b164380e6c4512f0c0b3eaf3447675689
+b60b664b164380e6c4512f0c0b3eaf3447675689 2019-03-01 13:02:23 +0000 sortie@google.com [infra] Make gclient sync quiet when nothing is updated.
+commit 9a0a3fd8c13ed33c36f1ec71e3975881615ad120
+9a0a3fd8c13ed33c36f1ec71e3975881615ad120 2019-03-01 10:03:22 +0000 paulberry@google.com Eliminate uses of old AST node types from analyzer_plugin
+commit ba4cfb86137f4a7d13f9161b2e1159a31362e819
+ba4cfb86137f4a7d13f9161b2e1159a31362e819 2019-03-01 08:37:12 +0000 johnniwinther@google.com Initial computation of initializer complexity through the scope visitor.
+commit 15515d86e3ee56b152389cfb2828bf0b1399d213
+15515d86e3ee56b152389cfb2828bf0b1399d213 2019-03-01 08:01:24 +0000 mfairhurst@google.com Reland "[analyzer] Constant verifier support for SetOrMapLiteral"
+commit 9bec44d1e2029bd821c197880d4dbfd4753dcc8c
+9bec44d1e2029bd821c197880d4dbfd4753dcc8c 2019-03-01 07:43:04 +0000 mfairhurst@google.com Revert "[analyzer] Constant verifier support for SetOrMapLiteral"
+commit d73bc494209458a336e0c2424ec1110a5182195d
+d73bc494209458a336e0c2424ec1110a5182195d 2019-03-01 07:08:32 +0000 kevmoo@google.com DEPS: update html, http_parser, logging, package_resolver, source_span
+commit 9c6315c199c9ef3082cd0e957f0a22cbad872acf
+9c6315c199c9ef3082cd0e957f0a22cbad872acf 2019-03-01 06:36:17 +0000 mfairhurst@google.com [analyzer] Constant verifier support for SetOrMapLiteral
+commit 67366ed7711326c0b6d3b387ac6f31ca78f50049
+67366ed7711326c0b6d3b387ac6f31ca78f50049 2019-03-01 02:43:30 +0000 scheglov@google.com Support for @Variant and @VariantId in generator.
+commit 16fc751e49867c672ae13dab97f186cf3fea363b
+16fc751e49867c672ae13dab97f186cf3fea363b 2019-03-01 02:01:19 +0000 ianloic@google.com [fuchsia] Clean-up after the FIDL string/vector types transition
+commit 1d3a0d512909c8a8180c67ec2499e5259984c7ee
+1d3a0d512909c8a8180c67ec2499e5259984c7ee 2019-03-01 01:37:09 +0000 alexmarkov@google.com Revert "[vm/ffi] Stress tests for FFI functions."
+commit 24df9cc588a8261be002fd339b2542c9d7804f59
+24df9cc588a8261be002fd339b2542c9d7804f59 2019-03-01 01:25:19 +0000 rmacnak@google.com [vm] Implement interpreter stubs for ARM, SIMARM and SIMARM64.
+commit e8d6e2f7041b31cfc94f191df7c86eac1f992bdd
+e8d6e2f7041b31cfc94f191df7c86eac1f992bdd 2019-03-01 00:48:59 +0000 bkonyi@google.com [ VM ] Updated SourceReport tests with correct token positions
+commit 19dbd703639dec329509eedc030e802140fe7c57
+19dbd703639dec329509eedc030e802140fe7c57 2019-03-01 00:47:59 +0000 alanknight@google.com Catch errors in formatting function types
+commit 22596950375000602711984556de765ead4d3baa
+22596950375000602711984556de765ead4d3baa 2019-03-01 00:32:25 +0000 rmacnak@google.com [vm, gc] Document object representation.
+commit 223f407af582af662e72c3b1a2c8169774a0cb88
+223f407af582af662e72c3b1a2c8169774a0cb88 2019-02-28 23:44:49 +0000 alexmarkov@google.com [gardening] Skip ffi/negative_function_test on asan bot
+commit c2e48195f0d02d9ad2a14aca97f600faccbd05f7
+c2e48195f0d02d9ad2a14aca97f600faccbd05f7 2019-02-28 21:42:09 +0000 paulberry@google.com Rename UiAsCodeVisitorMixin to UIAsCodeVisitorMixin
+commit 48ee388791bc47c0ba9500a81ad31bbc136f75ea
+48ee388791bc47c0ba9500a81ad31bbc136f75ea 2019-02-28 21:25:49 +0000 brianwilkerson@google.com Fix a typo in a shared test
+commit 545ebe1741b8ed7ba06d52e8cbf540ab8259c9cb
+545ebe1741b8ed7ba06d52e8cbf540ab8259c9cb 2019-02-28 20:54:19 +0000 paulberry@google.com Prepare to publish analyzer 0.35.3
+commit 17195d266751742cea69abfa89b9ba53e31762af
+17195d266751742cea69abfa89b9ba53e31762af 2019-02-28 20:46:16 +0000 paulberry@google.com Eliminate uses of old AST node types from dev_compiler
+commit a417659fcd25544c9d43b194d35b14894d41fc1f
+a417659fcd25544c9d43b194d35b14894d41fc1f 2019-02-28 20:39:16 +0000 danrubel@google.com debug dartfix test
+commit a10b0d8763d7aefca68c4854bff4e02ce7494e9d
+a10b0d8763d7aefca68c4854bff4e02ce7494e9d 2019-02-28 19:29:06 +0000 ajcbik@google.com [vm/compiler] LICM and CSE improvements
+commit ff6f61c87216406bb47999d6fdbed4e0fd12cab4
+ff6f61c87216406bb47999d6fdbed4e0fd12cab4 2019-02-28 18:35:03 +0000 bkonyi@google.com [VM / Observatory ] Remove needless stacktrace print when adding to closed socket
+commit a51c9f15cc16793fce7cf083b2852624f2ae14ae
+a51c9f15cc16793fce7cf083b2852624f2ae14ae 2019-02-28 18:21:03 +0000 paulberry@google.com Make optype compatible with previous versions of analyzer.
+commit a2eac987538d75effd5820732a04344eacf17a4d
+a2eac987538d75effd5820732a04344eacf17a4d 2019-02-28 17:50:09 +0000 paulberry@google.com Merge HintCodeTest_Driver into HintCodeTest.
+commit 9d609426b23590b7b834fb034c290f8e1f4daf81
+9d609426b23590b7b834fb034c290f8e1f4daf81 2019-02-28 17:42:53 +0000 sjindel@google.com [vm] Update status file for standalone_2/ffi/function_stress_test
+commit bab9d2ad055b76c0ae5002fe83019bf572a244b4
+bab9d2ad055b76c0ae5002fe83019bf572a244b4 2019-02-28 17:38:19 +0000 alexmarkov@google.com [vm] Remember GenericCovariantImpl in TypeParameter
+commit 3dcc0c69a1de5ff58b922c3a3e352a7974db5413
+3dcc0c69a1de5ff58b922c3a3e352a7974db5413 2019-02-28 17:34:47 +0000 sjindel@google.com [vm] Fix windows build after "[vm/ffi] Stress tests for FFI functions."
+commit 1596f437bd59223b9ffa6e042b1b88d0c3784b84
+1596f437bd59223b9ffa6e042b1b88d0c3784b84 2019-02-28 17:18:49 +0000 danrubel@google.com debug dartfix test
+commit fa8ba53b521d7d2c6953ece3f4764076a75847d6
+fa8ba53b521d7d2c6953ece3f4764076a75847d6 2019-02-28 16:59:11 +0000 whesse@google.com [infra] Add a script that appends fields with previous results to result data
+commit b186a270e49a18ecac1e0ac6297db3507459ce9c
+b186a270e49a18ecac1e0ac6297db3507459ce9c 2019-02-28 16:40:36 +0000 sjindel@google.com [vm/ffi] Stress tests for FFI functions.
+commit 7dec865054b3e73857f8494fa7d679fbefc3831d
+7dec865054b3e73857f8494fa7d679fbefc3831d 2019-02-28 15:35:36 +0000 paulberry@google.com Add set literal support to the flutter outline computer
+commit 7c70ab1817ad6553f21fadadf0a88fe568ee8745
+7c70ab1817ad6553f21fadadf0a88fe568ee8745 2019-02-28 14:12:26 +0000 lrn@google.com Revert change that empirically doesn't improve code for dart2js stopwatch.
+commit 895bc90509993987d4f7106ffec9484691a6b7a8
+895bc90509993987d4f7106ffec9484691a6b7a8 2019-02-28 13:43:17 +0000 sigurdm@google.com Sync pub client to newest version
+commit 39f365f3b963d774ee0a805caf45b0480402b96d
+39f365f3b963d774ee0a805caf45b0480402b96d 2019-02-28 12:48:56 +0000 paulberry@google.com Sort declarations in parser.dart.
+commit 8af83b19d6326994ba5c3dc5362cd37462c1d526
+8af83b19d6326994ba5c3dc5362cd37462c1d526 2019-02-28 12:48:16 +0000 paulberry@google.com Sort declarations in ast_builder.dart.
+commit 0adddfbeab69f43bc8985f774b24610a773adc97
+0adddfbeab69f43bc8985f774b24610a773adc97 2019-02-28 12:37:56 +0000 paulberry@google.com Eliminate uses of old AST node types from analysis server
+commit 120328aff7e238c8c840aedec672cbe7eda9c2d6
+120328aff7e238c8c840aedec672cbe7eda9c2d6 2019-02-28 12:11:16 +0000 askesc@google.com [fasta] Commandline option to enable asserts
+commit 82c5c5bbb2ce40391e2d1b6899b6ff201360f23a
+82c5c5bbb2ce40391e2d1b6899b6ff201360f23a 2019-02-28 12:11:16 +0000 askesc@google.com [fasta] Only read compiler context at construction in kernel_target.
+commit 9a4c49f30118e7a53728acb4479cf30e29c2087b
+9a4c49f30118e7a53728acb4479cf30e29c2087b 2019-02-28 10:32:06 +0000 johnniwinther@google.com Update field analysis tests to prepare for eager initializer improvements
+commit 75370569fc150a286f8f8209089a41d55a4f1282
+75370569fc150a286f8f8209089a41d55a4f1282 2019-02-28 10:12:46 +0000 ahe@google.com Fall back to DillLoader when computing types in SourceLoader
+commit 78ba3dab7ae2f3661eb3fc6e9b001c1872a241fd
+78ba3dab7ae2f3661eb3fc6e9b001c1872a241fd 2019-02-28 10:12:26 +0000 ahe@google.com Rename ImplicitType to ImplcitFieldType
+commit 1720704594e0cd15da0050325780f505fc9996f1
+1720704594e0cd15da0050325780f505fc9996f1 2019-02-28 09:12:26 +0000 johnniwinther@google.com Recognize effectively constant static fields
+commit ba31e448ca3bc16be7d9767f1d6e790a43ca462e
+ba31e448ca3bc16be7d9767f1d6e790a43ca462e 2019-02-28 09:08:56 +0000 ahe@google.com Finish implementing IsIntersectionSubtypeOf
+commit 5f095b7039a38bc47de4abbfec300245c3c42785
+5f095b7039a38bc47de4abbfec300245c3c42785 2019-02-28 06:05:00 +0000 kmillikin@google.com [Fasta] Add support for spread in map literals
+commit 3b8591d13ebfa3937af44e0c1cab0b9ba37eeac9
+3b8591d13ebfa3937af44e0c1cab0b9ba37eeac9 2019-02-28 00:53:42 +0000 vsm@google.com [ddc] Initial impl for invoking service extension
+commit ae70ce855faf37a47c9f2faaf72af17bffbc40b6
+ae70ce855faf37a47c9f2faaf72af17bffbc40b6 2019-02-27 23:39:00 +0000 ariaye@google.com Include the completion suggestion labels as explicit relevance tags
+commit 50ab52d56771aa4958a2a6ca254f3b06328611b6
+50ab52d56771aa4958a2a6ca254f3b06328611b6 2019-02-27 22:41:40 +0000 sigmund@google.com Use raw is-check when type arguments match the bounds
+commit d650c619e2b91b426582bbbd08082d03d6a9cebe
+d650c619e2b91b426582bbbd08082d03d6a9cebe 2019-02-27 22:02:10 +0000 danrubel@google.com more postfix "!" non-null assert operator tests
+commit a3ab6b651475d93109a6feccd947aedba3055e24
+a3ab6b651475d93109a6feccd947aedba3055e24 2019-02-27 22:01:00 +0000 rmacnak@google.com [vm, gc] Reduce cost of maintaining allocation stats during scavenges.
+commit 36c14db2d34b00356d8c5279d2184658324213a6
+36c14db2d34b00356d8c5279d2184658324213a6 2019-02-27 21:48:00 +0000 sigmund@google.com Only refine non-null in SSA
+commit a1349ac52972a4c69e1b05079ed1662b3b0f8c3f
+a1349ac52972a4c69e1b05079ed1662b3b0f8c3f 2019-02-27 21:41:00 +0000 paulberry@google.com Remove childEntities and visitChildren from ForEachStatementImpl and ForStatementImpl.
+commit 31993bf1b571c91503c1c97ad3a45c6dc13afca3
+31993bf1b571c91503c1c97ad3a45c6dc13afca3 2019-02-27 20:19:08 +0000 danrubel@google.com improve expression function body recovery
+commit 1c477ad3aad2d0490949c2acf7132bfbeab873be
+1c477ad3aad2d0490949c2acf7132bfbeab873be 2019-02-27 20:14:57 +0000 brianwilkerson@google.com Refactor downward inference to improve recovery
+commit 8f12d634fea19d42c363bef65cffd5582a3997ec
+8f12d634fea19d42c363bef65cffd5582a3997ec 2019-02-27 19:20:22 +0000 danrubel@google.com add postfix "!" non-null assert operator
+commit ab10fb12dc4f3b90ab5623d09472a1d10881070f
+ab10fb12dc4f3b90ab5623d09472a1d10881070f 2019-02-27 19:18:27 +0000 alexmarkov@google.com [vm/interpreter] Reduce stack usage of interpreter
+commit ffc1383918e75c48a15817fd6c88b6a85940e6e8
+ffc1383918e75c48a15817fd6c88b6a85940e6e8 2019-02-27 19:12:17 +0000 srawlins@google.com Move tests of five more analyzer codes to diagnostics
+commit a6b76df8d8ee05ab89890b4acef7687c2cab31e6
+a6b76df8d8ee05ab89890b4acef7687c2cab31e6 2019-02-27 18:16:02 +0000 sigmund@google.com Add flag to re-run global inference when reading a data file.
+commit b04cb2f5e7fec31fd6df1fbc864ab85bd7424456
+b04cb2f5e7fec31fd6df1fbc864ab85bd7424456 2019-02-27 18:12:07 +0000 paulberry@google.com Don't create instances of ForStatement2Impl yet.
+commit 82a15835f06b01912fe092f7a74ff24cec4cf5f9
+82a15835f06b01912fe092f7a74ff24cec4cf5f9 2019-02-27 18:07:57 +0000 sigmund@google.com Short-circuit logical operators in constants
+commit 7829012e6176f1290fd0f3311a80da69889c9f2a
+7829012e6176f1290fd0f3311a80da69889c9f2a 2019-02-27 15:40:17 +0000 danrubel@google.com add new ExperimentNotEnabled error code
+commit 1e2211bbb670bb54dedf9e624e9094c78d64175d
+1e2211bbb670bb54dedf9e624e9094c78d64175d 2019-02-27 15:38:28 +0000 mfairhurst@google.com going to go ahead and just revert this. I don't think it is at all critical. Thanks for noticing the build failure Paul!
+commit 01cc5a6305fdb7ee8b09bf46d8b56268eb7b3c52
+01cc5a6305fdb7ee8b09bf46d8b56268eb7b3c52 2019-02-27 15:00:17 +0000 dantup@google.com Ensure unknown fields in LSP payloads are ignored
+commit d7a7de31bfa4b17d2d2e65650a5a519a1cc59e90
+d7a7de31bfa4b17d2d2e65650a5a519a1cc59e90 2019-02-27 14:26:02 +0000 kmillikin@google.com Update dartkb test expectations
+commit 0e9d97498c0c7af0fe7412a6c8f03b28c8a19c48
+0e9d97498c0c7af0fe7412a6c8f03b28c8a19c48 2019-02-27 12:08:32 +0000 dantup@google.com Add some notes on using Dart LSP with Vim
+commit a9ef31ba431997eb6b1193409761e3823f9d0a9f
+a9ef31ba431997eb6b1193409761e3823f9d0a9f 2019-02-27 11:48:12 +0000 kmillikin@google.com [Fasta] Add Kernel syntax for spread elements
+commit b79e2a88820e4c796194bdf81a006ae87afe5003
+b79e2a88820e4c796194bdf81a006ae87afe5003 2019-02-27 10:48:22 +0000 johnniwinther@google.com Fix equivalence/show_helper
+commit 40bab34fbd08673b469b86c01f211cd0b6e805c5
+40bab34fbd08673b469b86c01f211cd0b6e805c5 2019-02-27 09:56:12 +0000 lrn@google.com Fix Stopwatch timers to not overflow on intermediate computations.
+commit edcaa05375c0d2eb105ad88798320b9c9b48f709
+edcaa05375c0d2eb105ad88798320b9c9b48f709 2019-02-27 09:46:52 +0000 johnniwinther@google.com Support @pragma('dart2js:noElision') on non-internal methods
+commit dc8a56bc0ece296915c7016e0a8241c7068eca18
+dc8a56bc0ece296915c7016e0a8241c7068eca18 2019-02-27 08:14:12 +0000 askesc@google.com Rename set literal tests to end in _test
+commit f484e1b05efbe9f4504de637167be94e3ff8cdc4
+f484e1b05efbe9f4504de637167be94e3ff8cdc4 2019-02-27 08:12:02 +0000 dantup@google.com Call canParse() for all LSP requests before passing to handlers
+commit 0e54ce3b2deed11df5f8423353b113e79889c742
+0e54ce3b2deed11df5f8423353b113e79889c742 2019-02-27 08:12:02 +0000 dantup@google.com Fix a canParse method that would overflow the stack
+commit 8fb52650e5c6e7fec86bd3a21cfd33f864344589
+8fb52650e5c6e7fec86bd3a21cfd33f864344589 2019-02-27 08:12:02 +0000 dantup@google.com Ensure LSP canParse type-checks optional values
+commit 26d91cf4b6a1084fb4530a449f4b0bb2e408e661
+26d91cf4b6a1084fb4530a449f4b0bb2e408e661 2019-02-27 08:12:02 +0000 dantup@google.com If LSP initialize fails in tests, throw
+commit d1876531f2a500950a71c75a61d8b87b068d9d3d
+d1876531f2a500950a71c75a61d8b87b068d9d3d 2019-02-27 08:12:02 +0000 dantup@google.com Fix LSP canParse to allow nulls where the spec allows
+commit 9450c6d829a91b055982eec3eb4d7f83d8686a11
+9450c6d829a91b055982eec3eb4d7f83d8686a11 2019-02-27 02:08:25 +0000 srawlins@google.com Move SUBTYPE_OF_SEALED_CLASS to own file, and DriverResolutionTest
+commit 603678e46cd8ddb54b59bb15003dac416cedc526
+603678e46cd8ddb54b59bb15003dac416cedc526 2019-02-27 01:53:45 +0000 rmacnak@google.com [vm, gc] Streamline the promotion allocation fast path.
+commit 8fd09304b66a440d805a0d93f482588b80f43566
+8fd09304b66a440d805a0d93f482588b80f43566 2019-02-27 01:46:16 +0000 rmacnak@google.com [vm, gc] Force inline MarkObject into its sole caller.
+commit fb88c983e739c5bd220bf744530396f4002c210c
+fb88c983e739c5bd220bf744530396f4002c210c 2019-02-27 00:50:07 +0000 aam@google.com [vm/compiler] Switch kernel helper for background compiler to use new space.
+commit 6d575152c908c9fc182c1009d27e1450644fa00d
+6d575152c908c9fc182c1009d27e1450644fa00d 2019-02-26 23:05:15 +0000 ajcbik@google.com [vm/compiler] Changes in Cid range computation
+commit 2d58ea3b42135e0d6ec90ae0b095005438c92e36
+2d58ea3b42135e0d6ec90ae0b095005438c92e36 2019-02-26 23:02:25 +0000 markzipan@google.com [dartdevc] fix #35554, throw NullThrownError when null is thrown
+commit 25aa35ef98ba9f0136017972ebec7bff6e01f229
+25aa35ef98ba9f0136017972ebec7bff6e01f229 2019-02-26 22:49:25 +0000 paulberry@google.com Convert ast.dart to triple-slash comment style
+commit b11cb39d66502dc2fa016105d1821723955ba8a3
+b11cb39d66502dc2fa016105d1821723955ba8a3 2019-02-26 22:42:25 +0000 mfairhurst@google.com [DDC] Support implict casts in [ForLoopStatement2]
+commit e94e797d7b65bae5e036161c6ad62a7894a07a82
+e94e797d7b65bae5e036161c6ad62a7894a07a82 2019-02-26 21:57:25 +0000 mfairhurst@google.com Fix flow analysis test for ForStatement2
+commit 0374ba1698dc8e6d57261901cceb6dcd515cdd3a
+0374ba1698dc8e6d57261901cceb6dcd515cdd3a 2019-02-26 21:50:34 +0000 paulberry@google.com Coalesce ForStatementBase with ForStatement2Impl.
+commit 4cd309316b2b8557b5654759166c4131900c1a51
+4cd309316b2b8557b5654759166c4131900c1a51 2019-02-26 21:49:24 +0000 paulberry@google.com Prepare visitors for UI-as-code rework.
+commit cfac26e1849a8cf5197af2a42e91fa8d7408be48
+cfac26e1849a8cf5197af2a42e91fa8d7408be48 2019-02-26 21:07:44 +0000 paulberry@google.com Deprecate `Expression.precedence`.
+commit 4abf59202d3c17320b2100aaebc4165f9abb6778
+4abf59202d3c17320b2100aaebc4165f9abb6778 2019-02-26 20:44:14 +0000 mfairhurst@google.com Fix ForLoop2 support in reference collector
+commit 05bba46133f9dd349dac2e83ca3bf81b25c2d749
+05bba46133f9dd349dac2e83ca3bf81b25c2d749 2019-02-26 19:20:00 +0000 sra@google.com Use DFS numbering for block dominates test
+commit fba89f9f64a11b8a9ade0735fc20168594660d98
+fba89f9f64a11b8a9ade0735fc20168594660d98 2019-02-26 19:04:50 +0000 rmacnak@google.com [vm] Don't change the content of the VM isolate's snapshot based on what was loading into a core or app snapshot.
+commit 3d3f6f9d4bf69eb222cf142651bae817ec7dfa52
+3d3f6f9d4bf69eb222cf142651bae817ec7dfa52 2019-02-26 18:38:00 +0000 fishythefish@google.com Remove immediateUnderSetLiteral.
+commit 7b86d78f0762ed397ddd7e9d28ea240872ed7810
+7b86d78f0762ed397ddd7e9d28ea240872ed7810 2019-02-26 18:38:00 +0000 fishythefish@google.com Enable set literal lowering in dart2js.
+commit e29835749a684a3e92ce704783c79a13b66c9c01
+e29835749a684a3e92ce704783c79a13b66c9c01 2019-02-26 17:39:50 +0000 nshahan@google.com [dart_internal] Bump SDK constraint upper-bound to <2.3.0
+commit 53ca69ba7eebc78e7dae6e4ff0169382ef4dc277
+53ca69ba7eebc78e7dae6e4ff0169382ef4dc277 2019-02-26 17:23:13 +0000 athom@google.com [release] Bump version and update CHANGELOG for 2.2.0
+commit 385be0cf31938ebdadba92755bae8e049b840d9a
+385be0cf31938ebdadba92755bae8e049b840d9a 2019-02-26 16:21:52 +0000 paulberry@google.com Remove unused imports
+commit 7e0c2c83f4fe80c7decf018f6b878aca1cff52b6
+7e0c2c83f4fe80c7decf018f6b878aca1cff52b6 2019-02-26 15:59:12 +0000 sigurdm@google.com Update pub revision
+commit d4ff20f00522e1ad1cac86bff562dc4553beb5c3
+d4ff20f00522e1ad1cac86bff562dc4553beb5c3 2019-02-26 15:35:12 +0000 dantup@google.com Remove unwanted @soloTest
+commit 155ac6afbdb2dde3edbd35b5fc80e6034b76f946
+155ac6afbdb2dde3edbd35b5fc80e6034b76f946 2019-02-26 14:07:42 +0000 ahe@google.com Create subtype benchmarks based on dart2js and a large application
+commit f0042a32250a8a6193e6d07e2b6508b13f43c864
+f0042a32250a8a6193e6d07e2b6508b13f43c864 2019-02-26 12:48:32 +0000 sjindel@google.com [vm/ffi] Factor out FFI code shared between compiler and runtime.
+commit 2eb3ac7c02def9bfcb3e6de73dfa0b3e5bafbe78
+2eb3ac7c02def9bfcb3e6de73dfa0b3e5bafbe78 2019-02-26 12:22:56 +0000 eernst@google.com Specify implicit creation
+commit b446d0a226b4e7473fe83bed50f5c55003fc38b5
+b446d0a226b4e7473fe83bed50f5c55003fc38b5 2019-02-26 11:59:43 +0000 ahe@google.com BenchMaker: a benchmark that reads the output from BenchMaker
+commit f6389a421631ef34353a0e2f42c63714165a3156
+f6389a421631ef34353a0e2f42c63714165a3156 2019-02-26 11:59:43 +0000 ahe@google.com TypeComputer: handle named parameters
+commit cffdd356ed1a55acc862a78107c8e9b0b0371b62
+cffdd356ed1a55acc862a78107c8e9b0b0371b62 2019-02-26 11:59:43 +0000 ahe@google.com BenchMaker: Don't obfuscate dart:async
+commit 1171c4735bd538602e9e883d89da1b82beff91bc
+1171c4735bd538602e9e883d89da1b82beff91bc 2019-02-26 11:59:43 +0000 ahe@google.com BenchMaker: Ensure all classes are serialized
+commit 47555a25b883669644a21af9a63f6d655af6d6fb
+47555a25b883669644a21af9a63f6d655af6d6fb 2019-02-26 11:59:43 +0000 ahe@google.com Fix detection of implicit bounds
+commit eb19bba3e3d24c0d14fddd689a1d171cfdb88d36
+eb19bba3e3d24c0d14fddd689a1d171cfdb88d36 2019-02-26 09:30:32 +0000 ahe@google.com Implement TypeBuilderComputer.visitFunctionType
+commit 7f00ea7e439d021b886083933026cd824805f0ae
+7f00ea7e439d021b886083933026cd824805f0ae 2019-02-26 09:30:32 +0000 ahe@google.com Subst interface types copied from superclass
+commit 561f7905d68abdadc41b72bc76aca1324d32095a
+561f7905d68abdadc41b72bc76aca1324d32095a 2019-02-26 09:30:32 +0000 ahe@google.com A type variable can be a subtype of another
+commit 0f9a5198bd644e908adcf8061e6a9722a40a2f93
+0f9a5198bd644e908adcf8061e6a9722a40a2f93 2019-02-26 09:30:32 +0000 ahe@google.com Finish implementing IsFutureOrSubtypeOf
+commit a52ac7d27b7cd88225b5a13131fab9b30e3d4fb2
+a52ac7d27b7cd88225b5a13131fab9b30e3d4fb2 2019-02-26 07:38:12 +0000 dantup@google.com Correct LSP canParse functions for classes containing restricted enums
+commit f7e435ac26d5254b8694403a59203f6349dec208
+f7e435ac26d5254b8694403a59203f6349dec208 2019-02-26 01:00:26 +0000 bkonyi@google.com [ VM / Windows ] Removed call to SetThreadDescription which is only supported in new Win 10 builds
+commit bf7ecc40f9cc49bce5e45d46721c1e04c17a341a
+bf7ecc40f9cc49bce5e45d46721c1e04c17a341a 2019-02-26 00:02:06 +0000 rmacnak@google.com [vm] Fix some compilation events to respect SUPPORT_TIMELINE instead of PRODUCT.
+commit fa0ba2220ed987ad9b6025e776959e918a4dad14
+fa0ba2220ed987ad9b6025e776959e918a4dad14 2019-02-25 22:31:24 +0000 ajcbik@google.com [vm/compiler] Fix bug in Cid range computation
+commit afb8747fc22eee86bdd7d88a37be3160b6a66d29
+afb8747fc22eee86bdd7d88a37be3160b6a66d29 2019-02-25 21:21:02 +0000 rmacnak@google.com [vm/tools] Add option in Graph Explorer to rewrite the graph to be more hierarchical.
+commit bf0568c5481a97e02ea84967745892d9d5128afe
+bf0568c5481a97e02ea84967745892d9d5128afe 2019-02-25 17:45:34 +0000 dantup@google.com Document restrictions on LSP refactors/code fixes
+commit 73e544ed0b7d7167feba0524f1e1c6a3acd4d1af
+73e544ed0b7d7167feba0524f1e1c6a3acd4d1af 2019-02-25 17:13:52 +0000 dantup@google.com Improve errors when LSP integration tests fail to spawn server
+commit 380cec1708c0f959aaa94b9047a82c36268f8c21
+380cec1708c0f959aaa94b9047a82c36268f8c21 2019-02-25 17:12:57 +0000 dantup@google.com Wait for LSP server to be ready before sending exit command in integration test
+commit 1e60ddbc5b4b61fa121441888bfdab3950128a30
+1e60ddbc5b4b61fa121441888bfdab3950128a30 2019-02-25 17:05:47 +0000 dantup@google.com Make more LSP enum classes support "any value"
+commit 3dfa610694f624913abea2ff5be9909380eb931d
+3dfa610694f624913abea2ff5be9909380eb931d 2019-02-25 15:28:34 +0000 paulberry@google.com Work around #35993 by allowing ints to be assigned to doubles in constants.
+commit 32eedccdcd565106800d0eef4185d4fa6019c80b
+32eedccdcd565106800d0eef4185d4fa6019c80b 2019-02-25 15:20:20 +0000 sstrickl@google.com [gardening] Fix patches restored in earlier commit.
+commit 38259ca3c88cab45fb07fc6fb7776760eeaed7a3
+38259ca3c88cab45fb07fc6fb7776760eeaed7a3 2019-02-25 14:20:07 +0000 kmillikin@google.com [Kernel] Change block expression to have a block body
+commit b37de47842b03d780776a502671ffb76b511f86e
+b37de47842b03d780776a502671ffb76b511f86e 2019-02-25 14:12:27 +0000 sstrickl@google.com [gardening] Restore flutter '--package' and dartjs_info_tag engine patch
+commit 76e3dfe0962d4855164d80f08ad3cfb304b9ab88
+76e3dfe0962d4855164d80f08ad3cfb304b9ab88 2019-02-25 12:17:54 +0000 ahe@google.com Remove TypeEnvironment.legacyMode
+commit 20da48c7cf9ddce0f5fd07e7bcaa4b8ab0c034b5
+20da48c7cf9ddce0f5fd07e7bcaa4b8ab0c034b5 2019-02-25 12:17:54 +0000 ahe@google.com Remove unused legacyMode from constant transformer
+commit ceb998ecc08e8194f39bbc14ec479399bfbcbe6c
+ceb998ecc08e8194f39bbc14ec479399bfbcbe6c 2019-02-25 12:17:54 +0000 ahe@google.com Remove unused TargetFlags
+commit 6af24a2490fd101ae6b054c4d31ad9294f4fa0d8
+6af24a2490fd101ae6b054c4d31ad9294f4fa0d8 2019-02-25 12:03:58 +0000 dantup@google.com Move LSP diagnostic server test -> integration
+commit 34614ef995ce599b9fb6b04294b4a268c21bc4fe
+34614ef995ce599b9fb6b04294b4a268c21bc4fe 2019-02-25 11:58:24 +0000 dantup@google.com Exit LSP server with exitCode=1 if there was no shutdown notification
+commit e7d263b05f7f66d15f778df60ee60625e9a3c5f4
+e7d263b05f7f66d15f778df60ee60625e9a3c5f4 2019-02-25 10:30:14 +0000 askesc@google.com [fasta] Transform set literals in annotations.
+commit 65698e2c2f378b1b0f842c174993dd8c198bbe47
+65698e2c2f378b1b0f842c174993dd8c198bbe47 2019-02-25 10:26:54 +0000 ahe@google.com Support mixin applications in type parser
+commit e395cdb1adb7f31ab63b1c4c621b138705840f6d
+e395cdb1adb7f31ab63b1c4c621b138705840f6d 2019-02-25 10:26:54 +0000 ahe@google.com Support mutually recursive types
+commit 393c1df6003daff97d07e3b1578a714a6741b11d
+393c1df6003daff97d07e3b1578a714a6741b11d 2019-02-25 10:26:54 +0000 ahe@google.com Improve performance of scope creation in type parser
+commit 03ee0fea5182a83a7521ed9c515615695c90141c
+03ee0fea5182a83a7521ed9c515615695c90141c 2019-02-25 10:02:28 +0000 sortie@google.com [infra] Temporarily support both the old latest build step names.
+commit 944544137b00cf23a5f3fd27b00faca5c2373507
+944544137b00cf23a5f3fd27b00faca5c2373507 2019-02-25 09:10:29 +0000 whesse@google.com Fix path to step log in approve_results.dart.
+commit 55c07c6d7a5e7ba0e49aef017b34774f826e9fde
+55c07c6d7a5e7ba0e49aef017b34774f826e9fde 2019-02-25 05:50:14 +0000 alexmarkov@google.com [vm] Fix null checks when CodeSourceMap is missing
+commit a481832df979134fc3a4289f17e74365e2ac9a7d
+a481832df979134fc3a4289f17e74365e2ac9a7d 2019-02-24 23:34:53 +0000 brianwilkerson@google.com Add a failing test for recovery in typedef
+commit 010052cb2b2c7c67815a44345b14e4963128f639
+010052cb2b2c7c67815a44345b14e4963128f639 2019-02-24 22:46:14 +0000 brianwilkerson@google.com Add an assist to convert conditional expressions to a null aware operator (issue 35691)
+commit 646c1f679ae2a8447feeb72fb9e42ae59c179882
+646c1f679ae2a8447feeb72fb9e42ae59c179882 2019-02-23 01:37:41 +0000 nshahan@google.com [tests] Minor fixes in control flow collections for tests
+commit f0155931a939ce6cc5a3910af583574d08c43cdd
+f0155931a939ce6cc5a3910af583574d08c43cdd 2019-02-23 01:15:21 +0000 paulberry@google.com Fix null reference exception in _constantValuesEqual
+commit 5192cd100800bde33b3e40d100f0a49f55f1433a
+5192cd100800bde33b3e40d100f0a49f55f1433a 2019-02-23 00:10:11 +0000 sigmund@google.com Narrowing improvements in dart2js global inference.
+commit ed796fcc3e66c42f71cc9f2be0ebe97935a92565
+ed796fcc3e66c42f71cc9f2be0ebe97935a92565 2019-02-23 00:06:31 +0000 fishythefish@google.com Reland "Flatten constant operations to implement JS semantics by default."
+commit 8fface97f004e69bd6688ac97841795064899823
+8fface97f004e69bd6688ac97841795064899823 2019-02-23 00:06:31 +0000 fishythefish@google.com Reland "Eliminate singleton/static access to the constant system and expose its functionality at the top level."
+commit e40b0e04c93e2b214499db3f7005be3fe5f40b62
+e40b0e04c93e2b214499db3f7005be3fe5f40b62 2019-02-23 00:06:31 +0000 fishythefish@google.com Reland "Merge the JavaScript constant system into the base constant system and flatten the inheritance hierarchy."
+commit 6bdd38ae840ea1fc39453fbc82e471ffc8d50bf3
+6bdd38ae840ea1fc39453fbc82e471ffc8d50bf3 2019-02-23 00:06:31 +0000 fishythefish@google.com Reland "Move the JavaScript constant system into constants/constant_system.dart in preparation to merge it with the base constant system and flatten the constant system hierarchy."
+commit 960b08a9691c6290863e22a351da962fd56902e1
+960b08a9691c6290863e22a351da962fd56902e1 2019-02-23 00:06:31 +0000 fishythefish@google.com Reland "Remove the Dart constant system and move all required classes into the JavaScript constant system."
+commit 6532b24d71ca211e342ae118bbd9d0c9afa88ef2
+6532b24d71ca211e342ae118bbd9d0c9afa88ef2 2019-02-23 00:00:31 +0000 markzipan@google.com Implementing constant visitors.
+commit d9c05534de4e199bdcc4412eb6c4f88513a303cc
+d9c05534de4e199bdcc4412eb6c4f88513a303cc 2019-02-22 23:34:11 +0000 nshahan@google.com [dartdevc] Add helper methods to emit `For` and `ForOf` loops
+commit 620862fb13452c0b921269cde4ab8ea5853b1cee
+620862fb13452c0b921269cde4ab8ea5853b1cee 2019-02-22 23:12:31 +0000 nshahan@google.com [dartdevc] Support SetOrMapLiteral nodes
+commit 9b55682a5cd66748be2bf2c0a66fb0fd40e24f9f
+9b55682a5cd66748be2bf2c0a66fb0fd40e24f9f 2019-02-22 22:20:42 +0000 paulberry@google.com Prepare to publish analyzer 0.35.2
+commit e1992e0178b9a13ba090518d780036092e57b6b4
+e1992e0178b9a13ba090518d780036092e57b6b4 2019-02-22 21:54:57 +0000 fishythefish@google.com Revert "Remove the Dart constant system and move all required classes into the"
+commit 05d9c60a228dd167c34769936ddac3a635dfbd74
+05d9c60a228dd167c34769936ddac3a635dfbd74 2019-02-22 21:50:57 +0000 fishythefish@google.com Revert "Move the JavaScript constant system into constants/constant_system.dart"
+commit 388f8e7731d8a752f6ca5a7e6c65853477a72314
+388f8e7731d8a752f6ca5a7e6c65853477a72314 2019-02-22 21:46:52 +0000 fishythefish@google.com Revert "Merge the JavaScript constant system into the base constant system and"
+commit 2c3dfa9e712ef4d970bb7fbb9a859bc973958bb0
+2c3dfa9e712ef4d970bb7fbb9a859bc973958bb0 2019-02-22 21:42:52 +0000 fishythefish@google.com Revert "Eliminate singleton/static access to the constant system and expose its"
+commit 163c49fef9a1dabb3fa638df331a206e58f280ad
+163c49fef9a1dabb3fa638df331a206e58f280ad 2019-02-22 21:38:49 +0000 fishythefish@google.com Revert "Flatten constant operations to implement JS semantics by default."
+commit 8172270c954513813eef066b4615d0f46b389e6e
+8172270c954513813eef066b4615d0f46b389e6e 2019-02-22 21:34:47 +0000 fishythefish@google.com Flatten constant operations to implement JS semantics by default.
+commit 027b76ecbf92c2323b5c3f3236c2dd5f7513c173
+027b76ecbf92c2323b5c3f3236c2dd5f7513c173 2019-02-22 21:34:47 +0000 fishythefish@google.com Eliminate singleton/static access to the constant system and expose its functionality at the top level.
+commit cf51eb2fbaf1764677444e1f269c4f3fef6b0c25
+cf51eb2fbaf1764677444e1f269c4f3fef6b0c25 2019-02-22 21:34:47 +0000 fishythefish@google.com Merge the JavaScript constant system into the base constant system and flatten the inheritance hierarchy.
+commit 1702b986c8bd9ba09dc24685f4483e4544986a6e
+1702b986c8bd9ba09dc24685f4483e4544986a6e 2019-02-22 21:34:47 +0000 fishythefish@google.com Move the JavaScript constant system into constants/constant_system.dart in preparation to merge it with the base constant system and flatten the constant system hierarchy.
+commit 5af8de8954224ab2de19a3a657ebef37478edfc9
+5af8de8954224ab2de19a3a657ebef37478edfc9 2019-02-22 21:34:47 +0000 fishythefish@google.com Remove the Dart constant system and move all required classes into the JavaScript constant system.
+commit 272f58e543225a563f6ed4f06524b487d504c903
+272f58e543225a563f6ed4f06524b487d504c903 2019-02-22 19:58:38 +0000 danrubel@google.com Revise parser to generate handleLiteralSetOrMap
+commit 30b47d24e6413943d6117cfceb3cf5c28ebf57dc
+30b47d24e6413943d6117cfceb3cf5c28ebf57dc 2019-02-22 19:48:51 +0000 rmacnak@google.com [sdk] Remove unused --packages flag no longer recognized by gen_snapshot.
+commit 0ad7caa5af5a4eb5a4aedcc5e0b02f7e21e855d1
+0ad7caa5af5a4eb5a4aedcc5e0b02f7e21e855d1 2019-02-22 19:44:21 +0000 athom@google.com [testing] Improve multitest error messages
+commit 58cea9395376544d4b3d98e45387921e35a1d3e8
+58cea9395376544d4b3d98e45387921e35a1d3e8 2019-02-22 17:31:24 +0000 danrubel@google.com Update BodyBuilder to use handleLiteralSetOrMap
+commit 8e2fcf7782b7be5cd8677077ac78c3f6a7f6cc6c
+8e2fcf7782b7be5cd8677077ac78c3f6a7f6cc6c 2019-02-22 16:08:16 +0000 johnniwinther@google.com Advanced tracking of field initialization
+commit 60e4f194b0924f3d21e48ba3bb01198ccb2cd387
+60e4f194b0924f3d21e48ba3bb01198ccb2cd387 2019-02-22 14:06:05 +0000 johnniwinther@google.com Recognize and inline effectively constant fields
+commit db62dc5323b11f5827376c1b1ca67e7fe3ed6ce0
+db62dc5323b11f5827376c1b1ca67e7fe3ed6ce0 2019-02-22 13:39:46 +0000 paulberry@google.com Remove hardcoded precedence integers in front end.
+commit 5aba7b7b85e9b7dcb275ea06dd485b3f97da9175
+5aba7b7b85e9b7dcb275ea06dd485b3f97da9175 2019-02-22 13:39:46 +0000 paulberry@google.com Normalize expression precedence between analyzer and front_end.
+commit ff265bb5ae1b5b13d71d553a0ee02115294093b4
+ff265bb5ae1b5b13d71d553a0ee02115294093b4 2019-02-22 13:37:36 +0000 pquitslund@google.com remove dead default lint registration API
+commit 2087d6db46c3b3508e2007191ba9f5e88f32a37d
+2087d6db46c3b3508e2007191ba9f5e88f32a37d 2019-02-22 13:08:45 +0000 jensj@google.com initializeFromComponent has to include platform
