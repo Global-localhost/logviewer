@@ -24,18 +24,13 @@ void main() async {
 void logServer(HttpRequest request) async {
   try {
     if (request.uri.path.startsWith('/changes')) {
-    final response = request.response;
-    response.headers.contentType = ContentType.html;
-    response.write(changesPage);
-    response.close();
-    return;
-  }
+      final response = request.response;
+      response.headers.contentType = ContentType.html;
+      response.write(changesPage);
+      response.close();
+      return;
+    }
 
-
-
-
-
-  
     if (!request.uri.path.startsWith('/log/')) {
       notFound(request);
       return;

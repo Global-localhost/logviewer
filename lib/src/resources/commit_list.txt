@@ -1,3 +1,173 @@
+commit 1c02016b7bca00cc7c05c13af29d645fe16dfa73
+dart-results-feed-commit-entry
+1c02016b7bca00cc7c05c13af29d645fe16dfa73 2019-03-14 17:04:36 +0000 sortie@google.com [infra] Fall back on inexact baseline commits in test.dart. 
+
+This change makes test.dart handle if the baseline commit hasn't been built
+on the requested builder and instead attempts to search for whether there's
+results for up to 25 preceding commits, which it then uses as an inexact
+baseline.
+
+Closes https://github.com/dart-lang/sdk/issues/36211
+
+Change-Id: Ie44042c67c9460826736f4a2cf159d8d7b455f0b
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96944
+Reviewed-by: William Hesse <whesse@google.com>
+
+commit e2a86d90813e4eeef8654878abe4edb566d790b6
+dart-results-feed-commit-entry
+e2a86d90813e4eeef8654878abe4edb566d790b6 2019-03-14 16:56:34 +0000 regis@google.com [VM runtime] Use memfd_create instead of shm_open for dual mapping of code. 
+
+Detect both at compile time and runtime for memfd_create support and disable
+dual code mapping if not available.
+
+Change-Id: I6908e6c116a60218bb5002378470011dfe76a257
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96845
+Commit-Queue: Régis Crelier <regis@google.com>
+Reviewed-by: Siva Annamalai <asiva@google.com>
+
+commit 7418238239f885ba92093c44a1768f8ec93b121f
+dart-results-feed-commit-entry
+7418238239f885ba92093c44a1768f8ec93b121f 2019-03-14 15:39:18 +0000 scheglov@google.com Implement LibraryElementForLink.session and return (empty) AnalysisSessionForLink. 
+
+R=brianwilkerson@google.com, paulberry@google.com
+
+Bug: https://buganizer.corp.google.com/issues/127956822
+Change-Id: Ifc93882d9ae7ae6079497fb10f3feea7ac6fb9e2
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96864
+Reviewed-by: Brian Wilkerson <brianwilkerson@google.com>
+Commit-Queue: Konstantin Shcheglov <scheglov@google.com>
+
+commit 806ec1161fa6396962b5d3d16962b7871bfada8f
+dart-results-feed-commit-entry
+806ec1161fa6396962b5d3d16962b7871bfada8f 2019-03-14 15:31:42 +0000 scheglov@google.com Issue 3270. Put StreamBuilder's type argument into linked edit. 
+
+R=brianwilkerson@google.com
+
+Bug: https://github.com/flutter/flutter-intellij/issues/3270
+Change-Id: I8e4d10029c7eab1f9edeaeed97ac4d54a74d81cd
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96865
+Reviewed-by: Brian Wilkerson <brianwilkerson@google.com>
+Commit-Queue: Konstantin Shcheglov <scheglov@google.com>
+
+commit eeb19b041687c22c28cc9ec9cd3af8b3098ef40d
+dart-results-feed-commit-entry
+eeb19b041687c22c28cc9ec9cd3af8b3098ef40d 2019-03-14 15:31:08 +0000 scheglov@google.com Remove usages of ExtensionManager and package:plugin in general. 
+
+R=brianwilkerson@google.com
+
+Change-Id: I489e72464474b3d40d7678f44562f65934f93288
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96863
+Reviewed-by: Brian Wilkerson <brianwilkerson@google.com>
+Commit-Queue: Konstantin Shcheglov <scheglov@google.com>
+
+commit 6c5194cfe113dab148e1598aee7f7199fa251af2
+dart-results-feed-commit-entry
+6c5194cfe113dab148e1598aee7f7199fa251af2 2019-03-14 14:52:12 +0000 kustermann@google.com [VM/Flutter] Remove 2 golden-file tests completely to avoid flutter analyze warning about missing copyright header 
+
+This should turn 3head green and hopefully the next engine->flutter roll
+fixes the golden expectation files.
+
+Change-Id: Ic52216a965c0981e187d2186653428ee52f1ac47
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96943
+Auto-Submit: Martin Kustermann <kustermann@google.com>
+Reviewed-by: Martin Kustermann <kustermann@google.com>
+
+commit f31b7928ae622811043a426141aec73ad050dda3
+dart-results-feed-commit-entry
+f31b7928ae622811043a426141aec73ad050dda3 2019-03-14 14:26:47 +0000 sstrickl@google.com [VM] Adding regexp lookbehind assertion support. 
+
+See https://github.com/tc39/proposal-regexp-lookbehind
+for a high-level description of the feature and examples.  This is one of the
+features requested in https://github.com/dart-lang/sdk/issues/34935.
+
+This work takes the feature as present in the v8 engine and appropriately
+merges it into our irregexp fork. Notable changes to the irregexp codebase to
+introduce this feature:
+
+-----
+
+We can no longer assume that all matching proceeds forwards, since lookbehind
+matching proceeds backwards. Similarly, we cannot assume that we can only be
+at the start of a string if we started matching from that point. The direction
+of matching must also be taken into consideration when doing bounds checking,
+which previously assumed the engine would never attempt to look before the
+start of a string.
+
+-----
+
+We may now parse backreferences to captures before the capture they
+reference, since we parse regular expressions left to right, but lookbehinds
+perform captures as they evaluate the string from right to left.  Since
+RegExpBackReference objects contain a pointer to their corresponding capture,
+this means that we may need to create RegExpCapture objects prior to the
+parsing of the corresponding captured subexpression.
+
+Thus, RegExpCapture objects are now only initialized with their index, and the
+body is set later when the subexpression is encountered and parsed. This means
+any method that operates on the body of a RegExpCapture can no longer be const,
+which also affects the rest of the RegExpTree class hierarchy. This also means
+that we don't have a valid max_match length for backreferences based off the
+capture body, and must assume they can end up being any length.
+
+-----
+
+
+Change-Id: Iffe0e71b17b1a0c6fea77235e8aee5c093005811
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/94540
+Commit-Queue: Stevie Strickland <sstrickl@google.com>
+Reviewed-by: Martin Kustermann <kustermann@google.com>
+
+commit dfb6d250b1c161b1661c9de94aed207909da0342
+dart-results-feed-commit-entry
+dfb6d250b1c161b1661c9de94aed207909da0342 2019-03-14 13:54:59 +0000 askesc@google.com [kernel] Better printing of string and unevaluated constants. 
+
+This makes the printed constant pool easier to read.
+
+Change-Id: I54d8223faeed9cb92454f4f0128f60b7e839ee42
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96904
+Reviewed-by: Kevin Millikin <kmillikin@google.com>
+Commit-Queue: Aske Simon Christensen <askesc@google.com>
+
+commit c9e9b76d4df7710eefce2bcff5a779efcd6de6cf
+dart-results-feed-commit-entry
+c9e9b76d4df7710eefce2bcff5a779efcd6de6cf 2019-03-14 13:09:07 +0000 kmillikin@google.com Skip control-flow-collections tests on all runtimes 
+
+This feature is under development in the front end.  Testing it on the
+runtimes leads to numerous spurious status changes.  Skip the tests
+for now.  The intent is that when a backend change causes a test to
+start passing, then that test will be un-skipped.
+
+Change-Id: I6c8c1f45315607039240c3edc61ba8340ae9cda0
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96902
+Commit-Queue: Kevin Millikin <kmillikin@google.com>
+Commit-Queue: Alexander Thomas <athom@google.com>
+Auto-Submit: Kevin Millikin <kmillikin@google.com>
+Reviewed-by: Alexander Thomas <athom@google.com>
+
+commit 1af9d3e14b0f643b22151a006a12ddbd6a33ca1b
+dart-results-feed-commit-entry
+1af9d3e14b0f643b22151a006a12ddbd6a33ca1b 2019-03-14 12:35:56 +0000 mit-mit@users.noreply.github.com Update breaking-changes.md 
+
+Closes #36172
+https://github.com/dart-lang/sdk/pull/36172
+
+GitOrigin-RevId: 9cdf8c273fd887c82ccc61ff963e31343ad2780a
+Change-Id: I200beb7667fad38abcf5b5e25ebbdfbd41c61d5a
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96920
+Reviewed-by: Michael Thomsen <mit@google.com>
+Commit-Queue: Michael Thomsen <mit@google.com>
+
+commit dbea5c68845d3d0423fd75fd74d93c98eb94bb83
+dart-results-feed-commit-entry
+dbea5c68845d3d0423fd75fd74d93c98eb94bb83 2019-03-14 11:30:07 +0000 askesc@google.com [fasta] Commandline option to leave environment constants unevaluated. 
+
+Also, outdated description of -D option corrected.
+
+Change-Id: Ie1dc011adc3ce2f5293826c96f22700a6528c9a7
+Reviewed-on: https://dart-review.googlesource.com/c/sdk/+/96880
+Reviewed-by: Peter von der Ahé <ahe@google.com>
+Commit-Queue: Aske Simon Christensen <askesc@google.com>
+
 commit 10a8663e74635d72d164723efce1f3babc006c77
 dart-results-feed-commit-entry
 10a8663e74635d72d164723efce1f3babc006c77 2019-03-14 10:47:46 +0000 kustermann@google.com [VM/Flutter] Disabled golden tests until next engine -> flutter roll (which probably fixes it) 
@@ -4863,119 +5033,4 @@ Change-Id: I2dcaad614f5fbd511712d4713c7b008d7ff710f1
 Reviewed-on: https://dart-review.googlesource.com/c/94744
 Reviewed-by: Jonas Jensen <jonasfj@google.com>
 Commit-Queue: Sigurd Meldgaard <sigurdm@google.com>
-
-commit 39f365f3b963d774ee0a805caf45b0480402b96d
-dart-results-feed-commit-entry
-39f365f3b963d774ee0a805caf45b0480402b96d 2019-02-28 12:48:56 +0000 paulberry@google.com Sort declarations in parser.dart. 
-
-Change-Id: I000193878307686d52e5b02cd3e6cdaafed68959
-Reviewed-on: https://dart-review.googlesource.com/c/94681
-Auto-Submit: Paul Berry <paulberry@google.com>
-Commit-Queue: Dan Rubel <danrubel@google.com>
-Reviewed-by: Dan Rubel <danrubel@google.com>
-
-commit 8af83b19d6326994ba5c3dc5362cd37462c1d526
-dart-results-feed-commit-entry
-8af83b19d6326994ba5c3dc5362cd37462c1d526 2019-02-28 12:48:16 +0000 paulberry@google.com Sort declarations in ast_builder.dart. 
-
-No functional change.
-
-Change-Id: If695a7437482aef1de7013aa404260f3602bdc93
-Reviewed-on: https://dart-review.googlesource.com/c/94642
-Auto-Submit: Paul Berry <paulberry@google.com>
-Commit-Queue: Dan Rubel <danrubel@google.com>
-Reviewed-by: Dan Rubel <danrubel@google.com>
-
-commit 0adddfbeab69f43bc8985f774b24610a773adc97
-dart-results-feed-commit-entry
-0adddfbeab69f43bc8985f774b24610a773adc97 2019-02-28 12:37:56 +0000 paulberry@google.com Eliminate uses of old AST node types from analysis server 
-
-Change-Id: Ifc97c6e08cb40cf98c519b442d10d921b2cccd05
-Reviewed-on: https://dart-review.googlesource.com/c/94364
-Reviewed-by: Konstantin Shcheglov <scheglov@google.com>
-Reviewed-by: Brian Wilkerson <brianwilkerson@google.com>
-Commit-Queue: Paul Berry <paulberry@google.com>
-
-commit 120328aff7e238c8c840aedec672cbe7eda9c2d6
-dart-results-feed-commit-entry
-120328aff7e238c8c840aedec672cbe7eda9c2d6 2019-02-28 12:11:16 +0000 askesc@google.com [fasta] Commandline option to enable asserts 
-
-Since Fasta is only concerned with compile-time behavior, the option
-only affects asserts in initializers in const constructors when
-evaluated during constant evaluation.
-
-Change-Id: I534cc7cc1f33f9b34d15550d38ea930ed7ac6709
-Reviewed-on: https://dart-review.googlesource.com/c/94740
-Commit-Queue: Aske Simon Christensen <askesc@google.com>
-Commit-Queue: Peter von der Ahé <ahe@google.com>
-Reviewed-by: Peter von der Ahé <ahe@google.com>
-Auto-Submit: Aske Simon Christensen <askesc@google.com>
-
-commit 82c5c5bbb2ce40391e2d1b6899b6ff201360f23a
-dart-results-feed-commit-entry
-82c5c5bbb2ce40391e2d1b6899b6ff201360f23a 2019-02-28 12:11:16 +0000 askesc@google.com [fasta] Only read compiler context at construction in kernel_target. 
-
-Change-Id: I0f62f4e993353a336101fe0babb9d1dc58844020
-Reviewed-on: https://dart-review.googlesource.com/c/94743
-Reviewed-by: Peter von der Ahé <ahe@google.com>
-
-commit 9a4c49f30118e7a53728acb4479cf30e29c2087b
-dart-results-feed-commit-entry
-9a4c49f30118e7a53728acb4479cf30e29c2087b 2019-02-28 10:32:06 +0000 johnniwinther@google.com Update field analysis tests to prepare for eager initializer improvements 
-
-Change-Id: Ie9611ed269a42be4d7c406739cf935d569d8606a
-Reviewed-on: https://dart-review.googlesource.com/c/94297
-Commit-Queue: Johnni Winther <johnniwinther@google.com>
-Reviewed-by: Sigmund Cherem <sigmund@google.com>
-
-commit 75370569fc150a286f8f8209089a41d55a4f1282
-dart-results-feed-commit-entry
-75370569fc150a286f8f8209089a41d55a4f1282 2019-02-28 10:12:46 +0000 ahe@google.com Fall back to DillLoader when computing types in SourceLoader 
-
-Change-Id: I01242136e6598a55b24ca28cff2258529882064b
-Reviewed-on: https://dart-review.googlesource.com/c/94502
-Reviewed-by: Jens Johansen <jensj@google.com>
-Commit-Queue: Peter von der Ahé <ahe@google.com>
-
-commit 78ba3dab7ae2f3661eb3fc6e9b001c1872a241fd
-dart-results-feed-commit-entry
-78ba3dab7ae2f3661eb3fc6e9b001c1872a241fd 2019-02-28 10:12:26 +0000 ahe@google.com Rename ImplicitType to ImplcitFieldType 
-
-Change-Id: I98cee54149fbe4c450919f72e7ab07e319b8fb34
-Reviewed-on: https://dart-review.googlesource.com/c/94721
-Reviewed-by: Jens Johansen <jensj@google.com>
-Commit-Queue: Peter von der Ahé <ahe@google.com>
-
-commit 1720704594e0cd15da0050325780f505fc9996f1
-dart-results-feed-commit-entry
-1720704594e0cd15da0050325780f505fc9996f1 2019-02-28 09:12:26 +0000 johnniwinther@google.com Recognize effectively constant static fields 
-
-Change-Id: Ic8f7a014a6af2f9d8854e0731fe0d2df11b554da
-Reviewed-on: https://dart-review.googlesource.com/c/94281
-Commit-Queue: Johnni Winther <johnniwinther@google.com>
-Reviewed-by: Sigmund Cherem <sigmund@google.com>
-
-commit ba31e448ca3bc16be7d9767f1d6e790a43ca462e
-dart-results-feed-commit-entry
-ba31e448ca3bc16be7d9767f1d6e790a43ca462e 2019-02-28 09:08:56 +0000 ahe@google.com Finish implementing IsIntersectionSubtypeOf 
-
-Change-Id: I1b2958269545a5e562b664d51d945d328f46d0d5
-Reviewed-on: https://dart-review.googlesource.com/c/94299
-Commit-Queue: Peter von der Ahé <ahe@google.com>
-Reviewed-by: Jens Johansen <jensj@google.com>
-Reviewed-by: Dmitry Stefantsov <dmitryas@google.com>
-
-commit 5f095b7039a38bc47de4abbfec300245c3c42785
-dart-results-feed-commit-entry
-5f095b7039a38bc47de4abbfec300245c3c42785 2019-02-28 06:05:00 +0000 kmillikin@google.com [Fasta] Add support for spread in map literals 
-
-Spreads are compiled as if they were spread elements in list or set
-literals.  When one occurs in a map literal it is translated to a new
-spread map entry.
-
-Change-Id: Ic618b1e85e595b4c2cd65e184b9d2c49e9c34b79
-Reviewed-on: https://dart-review.googlesource.com/c/94547
-Commit-Queue: Kevin Millikin <kmillikin@google.com>
-Reviewed-by: Dmitry Stefantsov <dmitryas@google.com>
-Reviewed-by: Aske Simon Christensen <askesc@google.com>
 

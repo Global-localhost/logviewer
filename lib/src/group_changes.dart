@@ -39,47 +39,82 @@ class ByConfigSetData {
   ByConfigSetData(
       this.formattedConfigSet, this.test, this.change, this.before, this.after);
 }
+
 main() async {
-  print( await createChangesPage());
+  print(await createChangesPage());
 }
 
 Future<String> createChangesPage() async {
-  
-    final changesPath = Resource("package:log/src/resources/changes.json");
-    final commitDataPath = Resource("package:log/src/resources/commit_list.txt");
+  final changesPath = Resource("package:log/src/resources/changes.json");
+  final commitDataPath = Resource("package:log/src/resources/commit_list.txt");
 
   // Load the input and the flakiness data if specified.
-  final changes = await loadJsonLines(changesPath) as List<dynamic>;
-  var lines = await loadLines(commitDataPath);
+  final changes = await loadJsonLines(changesPath);
   var hashes = <String>[];
   var commitData = <String>[];
   var reviewLinks = <String>[];
-  var line = lines.iterator;
-  bool reviewExpected = false;
-  while (line.moveNext()) {
-    if (line.current == 'dart-results-feed-commit-entry') {
-      if (reviewExpected) {
-        reviewLinks.add("https://dart.googlesource.com/sdk/+/${hashes.last}");
+  const reviewPrefix = "Reviewed-on: ";
+  if (true) {
+    // Static commit data
+    var lines = await loadLines(commitDataPath);
+    var line = lines.iterator;
+    bool reviewExpected = false;
+    while (line.moveNext()) {
+      if (line.current == 'dart-results-feed-commit-entry') {
+        if (reviewExpected) {
+          reviewLinks.add("https://dart.googlesource.com/sdk/+/${hashes.last}");
+        }
+        line.moveNext();
+        hashes.add(line.current.substring(0, 40));
+        commitData
+            .add(line.current.substring(46, 57) + line.current.substring(66));
+        reviewExpected = true;
       }
-      line.moveNext();
-      hashes.add(line.current.substring(0, 40));
-      commitData.add(line.current.substring(46, 57) + line.current.substring(66));
-      reviewExpected = true;
+      if (line.current.startsWith(reviewPrefix) && reviewExpected) {
+        reviewLinks.add(line.current.substring(reviewPrefix.length));
+        reviewExpected = false;
+      }
     }
-    const reviewPrefix = "Reviewed-on: ";
-    if (line.current.startsWith(reviewPrefix) && reviewExpected) {
-      reviewLinks.add(line.current.substring(reviewPrefix.length));
-      reviewExpected = false;
+  } else {
+    // Load data from gerrit/git REST API
+    final commits = ((await commitInformation()) as Map<String, dynamic>)["log"]
+        as List<dynamic>;
+    for (Map<String, dynamic> commit in commits) {
+      hashes.add(commit["commit"]);
+      reviewLinks.add(commit["message"]
+          .split('\n')
+          .firstWhere((String line) => line.startsWith(reviewPrefix),
+              orElse: () =>
+                  "${reviewPrefix}https://dart.googlesource.com/sdk/+/${hashes.last}")
+          .substring(reviewPrefix.length));
+      final time = commit["committer"]["time"].substring(0, 16);
+      final author = commit["author"]["email"];
+      final subject = commit["message"].split('\n').first;
+      commitData.add("$time $author $subject");
     }
+    print(hashes.take(10));
+    print(reviewLinks.take(10));
+    print(commitData.take(10));
   }
   final data = computePageData(changes, hashes);
   return htmlPage(data, hashes, commitData, reviewLinks);
 }
 
+Future<Object> commitInformation() async {
+  final client = HttpClient();
+  final request = await client.getUrl(Uri.parse(
+      "https://dart.googlesource.com/sdk/+log/master?n=200&format=JSON"));
+  final response = await request.close();
+  return response
+      .transform(utf8.decoder)
+      .transform(LineSplitter())
+      .skip(1)
+      .transform(json.decoder)
+      .single;
+}
 
-
-  Map<int, Map<int, Map<String, List<ByConfigSetData>>>> computePageData(List<dynamic> changes,
-                                                                         List<String> hashes) {
+Map<int, Map<int, Map<String, List<ByConfigSetData>>>> computePageData(
+    List<dynamic> changes, List<String> hashes) {
   final Map<String, int> hashIndex = Map.fromEntries(
       Iterable.generate(hashes.length, (i) => MapEntry(hashes[i], i)));
 
@@ -95,8 +130,7 @@ Future<String> createChangesPage() async {
   }
 
   final data = List<ByConfigSetData>();
-  
-  
+
   for (final test in resultsForTestAndChange.keys) {
     for (final results in resultsForTestAndChange[test].keys) {
       var changes = resultsForTestAndChange[test][results];
@@ -106,8 +140,12 @@ Future<String> createChangesPage() async {
           before.add(hashIndex[change["previous_commit_hash"]]);
         }
         // Sort changes by before, take all where after < first before, repeat
-        var firstSection = changes.where((change) => hashIndex[change["commit_hash"]] < before.min).toList();
-        changes =  changes.where((change) => hashIndex[change["commit_hash"]] >= before.min).toList();
+        var firstSection = changes
+            .where((change) => hashIndex[change["commit_hash"]] < before.min)
+            .toList();
+        changes = changes
+            .where((change) => hashIndex[change["commit_hash"]] >= before.min)
+            .toList();
         final configs = <String>[];
         before = MinMax();
         final after = MinMax();
@@ -117,7 +155,7 @@ Future<String> createChangesPage() async {
           after.add(hashIndex[change["commit_hash"]]);
         }
         configs.sort();
-        final formattedSet = configs.join(",<br>") ;
+        final formattedSet = configs.join(",<br>");
         data.add(ByConfigSetData(formattedSet, test, results, before, after));
       }
     }
@@ -135,7 +173,7 @@ Future<String> createChangesPage() async {
   }
 
   return byBlamelist;
-  }
+}
 
 String prelude() => '''
 <!DOCTYPE html><html><head><title>Results Feed</title>
@@ -163,7 +201,8 @@ span.green {background-color: SpringGreen;}
 
 String postlude() => '''</body></html>''';
 
-String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, List<String> hashes, List<String> commitData, List<String> reviewLinks) {
+String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data,
+    List<String> hashes, List<String> commitData, List<String> reviewLinks) {
   StringBuffer page = StringBuffer(prelude());
 
   page.write("<table>");
@@ -173,8 +212,9 @@ String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, Lis
   print(after.max);
   for (var afterKey = 0; afterKey <= after.max; ++afterKey) {
     // Print info about this commit:
-    page.write("<tr><td colspan='3'><h3>${commitData[afterKey]}</h3><a href='${reviewLinks[afterKey]}'>${hashes[afterKey]}</a></td></tr>");
-    if (!data.containsKey(afterKey)) continue;    
+    page.write(
+        "<tr><td colspan='3'><h3><a href='${reviewLinks[afterKey]}'>${hashes[afterKey].substring(0, 8)}</a>&nbsp;&nbsp;${commitData[afterKey]}</h3></td></tr>");
+    if (!data.containsKey(afterKey)) continue;
     var beforeKeys = data[afterKey].keys.toList()..sort();
     for (var beforeKey in beforeKeys) {
       page.write("<tr><td class='blamelist' colspan='3'>");
@@ -183,10 +223,12 @@ String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, Lis
             "invalid (empty) blamelist: before is after after: $afterKey $beforeKey");
         page.write(
             "Change first appeared on or after ${hashes[afterKey]} ${commitData[afterKey]}");
-        } else {
-          void writeChange(int i) {
-            page.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href='${reviewLinks[i]}'>${hashes[i]}</a> ${commitData[i]}<br>");
-          }
+      } else {
+        void writeChange(int i) {
+          page.write(
+              "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href='${reviewLinks[i]}'>${hashes[i]}</a> ${commitData[i]}<br>");
+        }
+
         var size = beforeKey - afterKey;
         page.write("blamelist has $size change${size > 1 ? 's' : ''}:<br>");
         const int summarize_size = 6;
@@ -194,16 +236,17 @@ String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, Lis
           for (int i = afterKey; i < beforeKey; ++i) {
             writeChange(i);
           }
-        }
-        else {
+        } else {
           var id = '$afterKey-$beforeKey';
           page.write("<div onclick='showBlamelist(\"$id\")'>");
-          for (int i = afterKey; i < afterKey + 3 ; ++i) {
+          for (int i = afterKey; i < afterKey + 3; ++i) {
             writeChange(i);
           }
-          page.write("<div class='expand_off' id='$id-off'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</div>");
-          page.write("<div class='expand_on' id='$id-on' style='display:none'>");
-          for (int i = afterKey + 3; i < beforeKey -1 ; ++i) {
+          page.write(
+              "<div class='expand_off' id='$id-off'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</div>");
+          page.write(
+              "<div class='expand_on' id='$id-on' style='display:none'>");
+          for (int i = afterKey + 3; i < beforeKey - 1; ++i) {
             writeChange(i);
           }
           page.write("</div>");
@@ -212,19 +255,21 @@ String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, Lis
         }
       }
       page.write("</td></tr>");
-      var configSetKeys = data[afterKey][beforeKey].keys.toList()
-        ..sort();
+      var configSetKeys = data[afterKey][beforeKey].keys.toList()..sort();
       for (var configSetKey in configSetKeys) {
         page.write("<tr><td class='outer'>");
-        page.write("<span class='green'>These tests changed in these ways:</span><br><table>");
-        final tests = data[afterKey][beforeKey][configSetKey]..sort((a, b) => a.test.compareTo(b.test));
-        final numTests = tests.length;
+        page.write(
+            "<span class='green'>These tests changed in these ways:</span><br><table>");
+        final tests = data[afterKey][beforeKey][configSetKey]
+          ..sort((a, b) => a.test.compareTo(b.test));
         for (final test in tests) {
-          page.write("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;${test.test}</td><td> &nbsp;&nbsp;${test.change}</td></tr>");
+          page.write(
+              "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;${test.test}</td><td> &nbsp;&nbsp;${test.change}</td></tr>");
         }
         page.write("</table></td><td class='outer'>");
-        
-        page.write("<span class='green'>on these configurations:</span><div style='column-count:2; lineHeight:2'>$configSetKey</div>");
+
+        page.write(
+            "<span class='green'>on these configurations:</span><div style='column-count:2; lineHeight:2'>$configSetKey</div>");
         page.write("</td></tr>");
       }
     }
@@ -246,6 +291,10 @@ Future<Object> loadJson(Resource resource) async {
 }
 
 Future<Object> loadJsonLines(Resource resource) async {
-  final json = await resource.openRead().transform(utf8.decoder).transform(LineSplitter()).toList();
-  return List<Map<String,dynamic>>.from(json.map(jsonDecode));
+  final json = await resource
+      .openRead()
+      .transform(utf8.decoder)
+      .transform(LineSplitter())
+      .toList();
+  return List<Map<String, dynamic>>.from(json.map(jsonDecode));
 }
