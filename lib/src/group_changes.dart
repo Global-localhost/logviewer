@@ -26,8 +26,8 @@ class MinMax {
   String toString() => "($min:$max)";
 }
 
-List<String> hashes;
-List<String> commitData;
+// List<String> hashes;
+//List<String> commitData;
 
 class ByConfigSetData {
   String formattedConfigSet;
@@ -38,12 +38,6 @@ class ByConfigSetData {
 
   ByConfigSetData(
       this.formattedConfigSet, this.test, this.change, this.before, this.after);
-  String toString() {
-    return "$test: $change between commits $before and $after:\n" +
-        "                     ${hashes[before.max]} ->\n" +
-        "                     ${hashes[after.min]}\n" +
-        " on set of configs $formattedConfigSet";
-  }
 }
 main() async {
   print( await createChangesPage());
@@ -57,23 +51,35 @@ Future<String> createChangesPage() async {
   // Load the input and the flakiness data if specified.
   final changes = await loadJsonLines(changesPath) as List<dynamic>;
   var lines = await loadLines(commitDataPath);
-  hashes = <String>[];
-  commitData = <String>[];
-  for (int i = 1; i < lines.length; i += 2) {
-    final line = lines[i];
-    hashes.add(line.substring(0, 40));
-    commitData.add(line.substring(46, 57) + line.substring(66));
+  var hashes = <String>[];
+  var commitData = <String>[];
+  var reviewLinks = <String>[];
+  var line = lines.iterator;
+  bool reviewExpected = false;
+  while (line.moveNext()) {
+    if (line.current == 'dart-results-feed-commit-entry') {
+      if (reviewExpected) {
+        reviewLinks.add("https://dart.googlesource.com/sdk/+/${hashes.last}");
+      }
+      line.moveNext();
+      hashes.add(line.current.substring(0, 40));
+      commitData.add(line.current.substring(46, 57) + line.current.substring(66));
+      reviewExpected = true;
+    }
+    const reviewPrefix = "Reviewed-on: ";
+    if (line.current.startsWith(reviewPrefix) && reviewExpected) {
+      reviewLinks.add(line.current.substring(reviewPrefix.length));
+      reviewExpected = false;
+    }
   }
-
-    final data = computePageData(changes, hashes, commitData);
-    return htmlPage(data, hashes, commitData);
+  final data = computePageData(changes, hashes);
+  return htmlPage(data, hashes, commitData, reviewLinks);
 }
 
 
 
   Map<int, Map<int, Map<String, List<ByConfigSetData>>>> computePageData(List<dynamic> changes,
-                                                                         List<String> hashes,
-                                                                         List<String> commitData) {
+                                                                         List<String> hashes) {
   final Map<String, int> hashIndex = Map.fromEntries(
       Iterable.generate(hashes.length, (i) => MapEntry(hashes[i], i)));
 
@@ -82,7 +88,7 @@ Future<String> createChangesPage() async {
 
   for (final Map<String, dynamic> change in changes) {
     final configsForName = resultsForTestAndChange.putIfAbsent(
-        change['test_name'], () => Map<String, List<Map<String, dynamic>>>());
+        change['name'], () => Map<String, List<Map<String, dynamic>>>());
     final key =
         '${change['previous_result']} -> ${change['result']}  (expected ${change['expected']})';
     configsForName.putIfAbsent(key, () => <Map<String, dynamic>>[]).add(change);
@@ -157,18 +163,17 @@ span.green {background-color: SpringGreen;}
 
 String postlude() => '''</body></html>''';
 
-String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, List<String> hashes, List<String> commitData) {
+String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, List<String> hashes, List<String> commitData, List<String> reviewLinks) {
   StringBuffer page = StringBuffer(prelude());
 
   page.write("<table>");
-  var afterKeys = data.keys.toList()..sort();
   var after = MinMax();
   data.keys.forEach(after.add);
   print(after.min);
   print(after.max);
   for (var afterKey = 0; afterKey <= after.max; ++afterKey) {
     // Print info about this commit:
-    page.write("<tr><td colspan='3'><h3>${commitData[afterKey]}</h3>${hashes[afterKey]}</td></tr>");
+    page.write("<tr><td colspan='3'><h3>${commitData[afterKey]}</h3><a href='${reviewLinks[afterKey]}'>${hashes[afterKey]}</a></td></tr>");
     if (!data.containsKey(afterKey)) continue;    
     var beforeKeys = data[afterKey].keys.toList()..sort();
     for (var beforeKey in beforeKeys) {
@@ -178,28 +183,31 @@ String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data, Lis
             "invalid (empty) blamelist: before is after after: $afterKey $beforeKey");
         page.write(
             "Change first appeared on or after ${hashes[afterKey]} ${commitData[afterKey]}");
-      } else {
+        } else {
+          void writeChange(int i) {
+            page.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href='${reviewLinks[i]}'>${hashes[i]}</a> ${commitData[i]}<br>");
+          }
         var size = beforeKey - afterKey;
         page.write("blamelist has $size change${size > 1 ? 's' : ''}:<br>");
         const int summarize_size = 6;
         if (size < summarize_size) {
           for (int i = afterKey; i < beforeKey; ++i) {
-            page.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${hashes[i]} ${commitData[i]}<br>");
+            writeChange(i);
           }
         }
         else {
           var id = '$afterKey-$beforeKey';
           page.write("<div onclick='showBlamelist(\"$id\")'>");
           for (int i = afterKey; i < afterKey + 3 ; ++i) {
-            page.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${hashes[i]} ${commitData[i]}<br>");
+            writeChange(i);
           }
           page.write("<div class='expand_off' id='$id-off'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</div>");
           page.write("<div class='expand_on' id='$id-on' style='display:none'>");
           for (int i = afterKey + 3; i < beforeKey -1 ; ++i) {
-            page.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${hashes[i]} ${commitData[i]}<br>");
+            writeChange(i);
           }
           page.write("</div>");
-          page.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${hashes[beforeKey-1]} ${commitData[beforeKey-1]}<br>");
+          writeChange(beforeKey - 1);
           page.write("</div>");
         }
       }
