@@ -130,8 +130,11 @@ Map<int, Map<int, Map<String, List<ByConfigSetData>>>> computePageData(
   for (final Map<String, dynamic> change in changes) {
     final configsForName = resultsForTestAndChange.putIfAbsent(
         change['name'], () => Map<String, List<Map<String, dynamic>>>());
-    final key =
-        '${change['previous_result']} -> ${change['result']}  (expected ${change['expected']})';
+    var key =
+    '${change['previous_result']} -> ${change['result']}  (expected ${change['expected']})';
+    if (change['matches']) {
+      key += " ";
+    }
     configsForName.putIfAbsent(key, () => <Map<String, dynamic>>[]).add(change);
   }
 
@@ -184,21 +187,23 @@ Map<int, Map<int, Map<String, List<ByConfigSetData>>>> computePageData(
 String prelude() => '''
 <!DOCTYPE html><html><head><title>Results Feed</title>
 <style>
-      td {background-color: white; font-family: monospace;}
-td.blamelist {background-color: powderblue; padding: 10px;} 
-h1   {color: blue;}
-td    {vertical-align: top;}
-td.outer    {padding: 10px;}
-span.green {background-color: SpringGreen;}
+  td           {font-family: monospace;}
+  td.blamelist {background-color: powderblue; padding: 10px;}
+  h1           {color: blue;}
+  td           {vertical-align: top;}
+  td.outer     {padding: 10px;}
+  td.nopad     {padding: 0px;}
+  td.nomatch   {background-color: Salmon;}
+  td.match     {background-color: PaleGreen;}
+  span.green   {background-color: SpringGreen;}
 </style>
 <script>function showBlamelist(id) {
   if (document.getElementById(id + "-off").style.display == "none") {
     document.getElementById(id + "-on").style.display = "none";
-      document.getElementById(id + "-off").style.display = "block";
-  } else
-  {
+    document.getElementById(id + "-off").style.display = "block";
+  } else {
     document.getElementById(id + "-off").style.display = "none";
-      document.getElementById(id + "-on").style.display = "block";
+    document.getElementById(id + "-on").style.display = "block";
   }
 }
 </script>
@@ -219,7 +224,7 @@ String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data,
   for (var afterKey = 0; afterKey <= after.max; ++afterKey) {
     // Print info about this commit:
     page.write(
-        "<tr><td colspan='3'><h3><a href='${reviewLinks[afterKey]}'>${hashes[afterKey].substring(0, 8)}</a>&nbsp;&nbsp;${commitData[afterKey]}</h3></td></tr>");
+        "<tr><td colspan='3' class='nopad'><a href='${reviewLinks[afterKey]}'>${hashes[afterKey].substring(0, 8)}</a>&nbsp;&nbsp;${commitData[afterKey]}</td></tr>");
     if (!data.containsKey(afterKey)) continue;
     var beforeKeys = data[afterKey].keys.toList()..sort();
     for (var beforeKey in beforeKeys) {
@@ -265,17 +270,22 @@ String htmlPage(Map<int, Map<int, Map<String, List<ByConfigSetData>>>> data,
       for (var configSetKey in configSetKeys) {
         page.write("<tr><td class='outer'>");
         page.write(
-            "<span class='green'>These tests changed in these ways:</span><br><table>");
+            "<span>These tests changed in these ways:</span><br><table>");
         final tests = data[afterKey][beforeKey][configSetKey]
           ..sort((a, b) => a.test.compareTo(b.test));
-        for (final test in tests) {
+          for (final test in tests) {
+            var testclass = "nomatch";
+            if (test.change.endsWith(" ")) {
+              // Test matches
+              testclass = "match";
+            }
           page.write(
-              "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;${test.test}</td><td> &nbsp;&nbsp;${test.change}</td></tr>");
+              "<tr><td class='$testclass'>&nbsp;&nbsp;&nbsp;&nbsp;${test.test}</td><td class='$testclass'> &nbsp;&nbsp;${test.change}</td></tr>");
         }
         page.write("</table></td><td class='outer'>");
 
         page.write(
-            "<span class='green'>on these configurations:</span><div style='column-count:2; lineHeight:2'>$configSetKey</div>");
+            "<span>on these configurations:</span><div style='column-count:2; lineHeight:2'>$configSetKey</div>");
         page.write("</td></tr>");
       }
     }
