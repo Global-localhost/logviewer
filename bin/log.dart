@@ -5,11 +5,9 @@
 
 /// Displays the log for a failing test on a given runner and build
 
-import 'dart:async';
-import 'dart:io';
+import 'package:args/args.dart';
 
 import 'package:log/src/get_log.dart';
-import 'package:args/args.dart';
 
 void main(List<String> args) {
   final parser = new ArgParser();
